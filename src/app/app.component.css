@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .menu{
     position: absolute;
-    top: 60px;
+    top: 75px;
     left: 0;
     width: 100%;
     padding: 0;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6{
     background: #0B4479 ;
     color: white;
 }
-.mostrar{
+.mostrar{    
     height: 305px;
 }
 .menu ul{
@@ -538,10 +538,7 @@ input[type=text], input[type=password] {
         font-size: 2.2em;
 
     }
-    .menu li:hover ul{
-        display: block;
-        position: absolute;
-    }
+    
 }
 
 
@@ -602,6 +599,11 @@ input[type=text], input[type=password] {
     .main-footer{
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    .menu li:hover ul{
+        display: block;
+        position: absolute;
     }
     
     
