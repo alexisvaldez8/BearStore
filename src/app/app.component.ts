@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BearStore';
+
+
+   btnMenu = document.getElementById('btnmenu');
+   menu = document.getElementById('menu');
+  
+  mostrar(){
+    'use strict';
+    document.getElementById('menu').classList.toggle('mostrar');
+  }
+
+  
+
 }
+
+
+
+

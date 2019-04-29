@@ -17,54 +17,47 @@
       </header>
   
       <nav class="main-nav">
-          <div class="container container--flex">
-              <span class="icon-menu" id="btnmenu"></span>
-              <ul class="menu" id="menu">
-                  <div class="dropdown opcion-menu dropdown-select">
-                          <li  class="dropbtn"> <a href="index.html" class="ruta-menu">Inicio </a><i class="fa fa-caret-down"></i></li>
-                        </div>
-                  <div class="dropdown opcion-menu">
-                          <li  class="dropbtn"> <a href="Hombre.html" class="ruta-menu">Hombre </a><i class="fa fa-caret-down"></i></li>
-                          <div class="dropdown-content">
-                            <a href="#">Playeras</a>
-                            <a href="#">Sudaderas</a>
-                            <a href="#">Chamarras</a>
-                          </div>
-                        </div>
-      
-                  <div class="dropdown opcion-menu">
-                          <li  class="dropbtn"> <a href="Hombre.html" class="ruta-menu">Mujer </a><i class="fa fa-caret-down"></i></li>
-                          <div class="dropdown-content">
-                              <a href="#">Playeras</a>
-                              <a href="#">Sudaderas</a>
-                              <a href="#">Chamarras</a>
-                          </div>
-                        </div>
-                  <div class="dropdown opcion-menu">
-                          <li  class="dropbtn"> <a href="Hombre.html" class="ruta-menu">Niño </a><i class="fa fa-caret-down"></i></li>
-                          <div class="dropdown-content">
-                              <a href="#">Playeras</a>
-                              <a href="#">Sudaderas</a>
-                              <a href="#">Chamarras</a>
-                          </div>
-                        </div>
-                        <div class="dropdown opcion-menu">
-                              <li  class="dropbtn"> <a href="Nosotros.html" class="ruta-menu">Nosotros </a><i class="fa fa-caret-down"></i></li>
-                          </div>
-                  <div class="dropdown opcion-menu">
-                          <li  class="dropbtn"> <a href="#" class="ruta-menu">Mi Cuenta </a><i class="fa fa-caret-down"></i></li>
-                      <div class="dropdown-content">
-                        <a href="#">Mis datos</a>
-                        <a href="#">Mis pedidos</a>
-                        <a href="#">Cambiar contraseña</a>
-                      </div>
-                    </div>
-              </ul>
-              <div class="user-icon">
-                  <a class="ruta-user-icon"><span onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="icon-user"></span>Iniciar Sesion</a>
-                  <a class="ruta-user-icon"><span onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="icon-pencil"></span>Registrarse</a>
-              </div>
-          </div>
-      </nav>
+            <div class="container container--flex">
+                <span class="icon-menu" id="btnmenu" (click)="mostrar()" ></span>
+                <ul class="menu" id="menu">
+                    <li class="opcion-menu"><a href="index.html" class="ruta-menu ruta-menu-select">Inicio</a></li>
+                    <li class="opcion-menu"><a href="Hombre.html" class="ruta-menu">Hombre    
+                    </a>
+                        <ul>
+                            <li><a class="a" href="">Playeras</a></li>
+                            <li><a class="a" href="">Sudaderas</a></li>
+                            <li><a class="a" href="">Chamarras</a></li>
+                        </ul>
+                    </li>
+                    <li class="opcion-menu"><a href="" class="ruta-menu">Mujer</a>
+                        <ul>
+                                <li><a class="a" href="">Playeras</a></li>
+                                <li><a class="a" href="">Sudaderas</a></li>
+                                <li><a class="a" href="">Chamarras</a></li>
+                        </ul>
+                    </li>
+                    <li class="opcion-menu"><a href="" class="ruta-menu">Niño</a>
+                        <ul>
+                                <li><a class="a" href="">Playeras</a></li>
+                                <li><a class="a" href="">Sudaderas</a></li>
+                                <li><a class="a" href="">Chamarras</a></li>
+                        </ul>
+                    </li>
+                    <li class="opcion-menu"><a href="" class="ruta-menu">Mi Cuenta</a>
+                        <ul>
+                                <li><a class="a" href="">Mis Pedidos</a></li>
+                                <li><a class="a" href="">Cambiar Contraseña</a></li>
+                                <li><a class="a" href="">Modificar Datos</a></li>
+                        </ul>
+                    </li>
+                    <li class="opcion-menu"><a href="" class="ruta-menu">Contacto</a>
+                    </li>
+                </ul>
+                <div class="user-icon">
+                    <a href="" class="ruta-user-icon"><span class="icon-user"></span>Iniciar Sesion</a>
+                    <a href="" class="ruta-user-icon"><span class="icon-pencil"></span>Registrarse</a>
+                </div>
+            </div>
+        </nav>
 
 </body>
