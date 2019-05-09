@@ -11,6 +11,17 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
+  
+prueba(){
+	'use strict';
+    document.getElementById('menu').classList.toggle('mostrar');
+}
+
+  mostrar(){
+    'use strict';
+    document.getElementById('menu').classList.toggle('mostrar');
+  }
+
   ngOnInit() {
 
     $(".submenu").click(function(){
@@ -64,6 +75,9 @@ export class MenuComponent implements OnInit {
 
 
 		autoplay();
+
+		
+
   }
 
 }

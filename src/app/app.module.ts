@@ -10,7 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 
 
 const routes:Routes=[
-      {path: '', component:InicioComponent}
+      {path: '', component:InicioComponent},
+      {path: 'seccion', component:SeccionPComponent}
   
 ]
 

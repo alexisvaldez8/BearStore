@@ -12,30 +12,21 @@ import { InicioComponent} from './inicio/inicio.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-	constructor(private router: Router){
-		
-	}
-	title = 'BearStore';
-
-
-   btnMenu = document.getElementById('btnmenu');
-   menu = document.getElementById('menu');
-  
-  mostrar(){
-    'use strict';
-    document.getElementById('menu').classList.toggle('mostrar');
+	constructor(private router: Router){	
   }
-
+  
+	title = 'BearStore';
+  btnMenu = document.getElementById('btnmenu');
+  menu = document.getElementById('menu');
+ 
+ mostrar(){
+   'use strict';
+   document.getElementById('menu').classList.toggle('mostrar');
+   alert("llega aqui");
+ }
   public ngOnInit(){
 
-		
-
-
-
-
-
-  		}
-
+  }
 
 
 }
