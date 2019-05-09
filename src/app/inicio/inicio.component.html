@@ -1,64 +1,6 @@
-<head>
-  <link href="https://file.myfontastic.com/KcG2ogPmSmjxJYkCoF7W8J/icons.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-</head>
+<app-menu></app-menu>
+
 <body>
-<header class="main-header">
-    <div class="container container--flex">
-        <div class="logo-container column column--50">
-            <img src="../assets/img/logo.png" alt="" class="logo">
-        </div>
-            <div class="main-header-principal column column--50">
-                <p class="main-header-principal-carrito">
-                    <span class="icon-cart2">(0)$0</span>
-                </p>
-            </div>
-    </div>
-  </header>
-
-  <nav class="main-nav">
-        <div class="container container--flex">
-            <span class="icon-menu" id="btnmenu" (click)="mostrar()" ></span>
-            <ul class="menu" id="menu">
-              <li class="opcion-menu"><a href="" class="ruta-menu ruta-menu-select">Inicio</a></li>
-              <li class="opcion-menu submenu"><a class="ruta-menu">Hombre</a>
-                <ul>
-                        <li><a class="a" href="">Playeras</a></li>
-                        <li><a class="a" href="">Sudaderas</a></li>
-                        <li><a class="a" href="">Chamarras</a></li>
-                </ul>
-            </li>
-              <li class="opcion-menu submenu"><a  class="ruta-menu">Mujer</a>
-                  <ul>
-                          <li><a class="a" href="">Playeras</a></li>
-                          <li><a class="a" href="">Sudaderas</a></li>
-                          <li><a class="a" href="">Chamarras</a></li>
-                  </ul>
-              </li>
-              <li class="opcion-menu submenu"><a  class="ruta-menu">Niño</a>
-                  <ul>
-                          <li><a class="a" href="">Playeras</a></li>
-                          <li><a class="a" href="">Sudaderas</a></li>
-                          <li><a class="a" href="">Chamarras</a></li>
-                  </ul>
-              </li>
-              <li class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>
-                  <ul>
-                          <li><a class="a" href="">Mis Pedidos</a></li>
-                          <li><a class="a" href="">Cambiar Contraseña</a></li>
-                          <li><a class="a" href="">Modificar Datos</a></li>
-                  </ul>
-              </li>
-              <li class="opcion-menu"><a href="" class="ruta-menu">Contacto</a>
-              </li>
-          </ul>
-            <div class="user-icon">
-                <a class="ruta-user-icon"><span onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="icon-user"></span>Iniciar Sesion</a>
-                <a class="ruta-user-icon"><span onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="icon-pencil"></span>Registrarse</a>
-            </div>
-        </div>
-    </nav>
-
     <!-----------------slider------------------>
     <div id="contenedor-slider" class="contenedor-slider">
         <div id="slider" class="slider">
@@ -146,9 +88,6 @@
 
 
 <!-----------------------modals-->
-
-
-
 <main class="main">
 
   <section class="descripcion descripcion-color">
@@ -202,28 +141,7 @@
 
 </main>
 
-<footer class="main-footer">
-      <div class="container container--flex">
-          <div class="column column--33">
-              <h2 class="column__title">¿Los productos son originales?</h2>
-              <p class="column__txt">Toda la ropa cuenta con su respectiva licencia brindada
-                      por nuestra marca distribuidora Mascara de Latex &copy;
-              </p>
-          </div>
-          <div class="column column--33">
-              <h2 class="column__title">¿Tienes dudas? Contactanos</h2>
-              <p class="column__txt">Whatsapp y telefono 618-804-17-54</p>
-              <p class="column__txt none">bearstoredgo@gmail.com</p>                      
-          </div>
-          <div class="column column--33">
-              <h2 class="column__title">Siguenos en nuestras redes</h2>
-              <p class="column__txt"><a href="" class="icon-facebook"></a> Facebook</p>
-              <p class="column__txt"><a href="" class="icon-instagram"></a> Siguenos en Instagram</p>            
-              <p class="column__txt"><a href="" class="icon-mobile"></a> Descarga la aplicacion</p>            
-          </div>
-          <p class="copy">&copy; 2019 Bear Store Durango | Todos los derechos reservados</p>
-      </div>
-  </footer>
+<app-footer></app-footer>
 
 
 </body>

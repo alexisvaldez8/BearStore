@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+import { MenuComponent} from './menu/menu.component';
+import { InicioComponent} from './inicio/inicio.component';
+
 
 
 @Component({

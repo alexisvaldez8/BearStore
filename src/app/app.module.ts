@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SeccionPComponent } from './seccion-p/seccion-p.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes:Routes=[
@@ -18,7 +19,8 @@ const routes:Routes=[
     AppComponent,
     MenuComponent,
     InicioComponent,
-    SeccionPComponent
+    SeccionPComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

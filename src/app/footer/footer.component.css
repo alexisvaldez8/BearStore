@@ -1,0 +1,62 @@
+h2{
+    font-size: 1.7em;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.column{
+    width: 100%;    
+}
+.main-footer{
+    background: #00202D;
+    color: white;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: .8em;
+}
+.copy{
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+}
+.main-footer [class*="icon-"]{
+    color: white;
+    text-decoration: none;
+}
+.main-footer [class*="icon-"]:before{
+    position: relative;
+    top:3px;
+    right: 5px;
+}
+
+/*------------------------------Estilos responsive------------------------------*/
+
+@media screen and (min-width:480px){
+    .main-footer .container--flex{
+        align-items: flex-start;
+    }
+    .column--50{
+        width: 49%;
+    }
+    .column--50-25{
+        width: 49%;
+    }
+    .column--33{
+        width: 32%;
+    }
+}
+@media screen and (min-width:1024px){
+    .main-footer{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
