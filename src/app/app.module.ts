@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SeccionPComponent } from './seccion-p/seccion-p.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductoComponent } from './producto/producto.component';
 
 
 const routes:Routes=[
@@ -21,7 +22,8 @@ const routes:Routes=[
     MenuComponent,
     InicioComponent,
     SeccionPComponent,
-    FooterComponent
+    FooterComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
           </div>
               <div class="main-header-principal column column--50">
                   <p class="main-header-principal-carrito">
-                      <span class="icon-cart2">(0)$0</span>
+                    <button  type="button" class=" icon-cart2 boton-cart" data-toggle="modal" data-target="#myModal" >(0)$0</button>
                   </p>
               </div>
       </div>
@@ -53,4 +53,30 @@
               </div>
           </div>
       </nav>
+
+
+      <div class="container modal-prueba">
+            
+            <!-- Modal -->
+            <div class="modal fade" modal-container id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content ">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Carrito de Compras</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>{{CarritoMensaje}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
     </body>

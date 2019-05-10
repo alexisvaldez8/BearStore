@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
+	CarritoMensaje="Tu carrito de compras esta vacio";
   
 prueba(){
 	'use strict';
