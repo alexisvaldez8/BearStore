@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700|Galdeano|Montserrat:400,700|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Montserrat+Alternates|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Gentium+Basic:400,700|Permanent+Marker');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 0;
+}
+/*--------------------------Estilos de base--------------------------*/
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.column{
+    width: 100%;    
+}
+.descripcion{
+    margin-top: 5px;
+}
+.productos-nuevos .column{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.grupo-productos{
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.8em;
+    margin: 30px;
+}
+
+.producto__img{
+    margin: auto;
+    max-width: 350px;
+}
+
+
+@media screen and (min-width:480px){
+     
+    .main{
+        padding-bottom: 15px;
+    }
+
+    .productos-nuevos .column{
+        border: 5px solid #ddd;
+        padding: 5px;
+    }
+    .productos-nuevos__img{
+        height: 320px;
+        object-fit: cover;
+    }
+    .main-footer .container--flex{
+        align-items: flex-start;
+    }
+    .column--50{
+        width: 49%;
+    }
+    .column--50-25{
+        width: 49%;
+    }
+
+    .column--33{
+        width: 32%;
+    }
+}
+
+@media screen and (min-width:768px){
+    .grupo-productos{
+        font-size: 2.2em;
+    
+}
+
+
+
+}
+
+@media screen and (min-width:1024px){
+    .container{
+        width: 1000px;
+    }
+ 
+    .productos-nuevos__title{
+        font-size: 1.4em;
+    }
+
+    .productos-nuevos__precio{
+        font-size: 1.8em;
+    }
+
+    .producto__precio{
+        font-size: 1.4em;
+    }
+    .producto__title{
+        font-weight: bold;
+        font-size: 1.6em;
+        
+    }
+    .producto__talla{
+        font-size: 1.2em;
+        
+    }
+    .producto__talla__boton{
+        align-content: center;
+    }
+    .boton__talla{
+        border: 5px solid #fff;
+        padding: 8px;
+        margin: 0 auto;
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+    .boton__carrito{
+        width: auto;
+        margin: auto;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    
+    
+}

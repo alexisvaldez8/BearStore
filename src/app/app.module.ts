@@ -12,7 +12,8 @@ import { ProductoComponent } from './producto/producto.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
-      {path: 'seccion', component:SeccionPComponent}
+      {path: 'seccion', component:SeccionPComponent},
+      {path: 'producto', component:ProductoComponent}
   
 ]
 
