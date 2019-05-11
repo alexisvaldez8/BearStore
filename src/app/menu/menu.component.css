@@ -60,8 +60,9 @@ h1, h2, h3, h4, h5, h6{
     padding: 10px;
 }
 .boton-cart{
+    color:white;
     border: none;
-    background: white;
+    background: #0B4479;
 }
 .icon-menu{
     display: block;
@@ -205,6 +206,9 @@ h1, h2, h3, h4, h5, h6{
     }
     .column--33{
         width: 32%;
+    }
+    .boton-cart{
+        background: white;
     }
 }
 

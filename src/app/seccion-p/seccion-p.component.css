@@ -1,0 +1,121 @@
+/*Estilos base*/
+.container{
+    width: 100%;
+    margin: auto;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.column{
+    width: 100%;    
+}
+.titulo{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.titulo-color .container{
+    background: white ;
+    color: #077CDB;
+    padding: 3px;
+    text-align: center;
+}
+.titulo-principal-genero{
+    margin: 15px 0;
+    font-size: 1.9em;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 100;
+}
+
+.descripcion{
+    margin-top: 5px;
+}
+
+.grupo-productos{
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.8em;
+    margin: 30px;
+}
+.productos .column{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.productos-img{
+    margin: auto;
+    max-width: 310px;
+    height: 350px;
+}
+
+.productos-title{
+    font-size: 1.3em;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.productos-precio{
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width:480px){
+    .main{
+        padding-bottom: 15px;
+    }
+    .productos .column{
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .productos-img{
+        height: 240px;
+    }
+    .column--50{
+        width: 49%;
+    }
+    .column--50-25{
+        width: 45%;
+    }
+
+    .column--33{
+        width: 32.5%;
+    }
+
+}
+
+@media screen and (min-width:768px){
+    .column-30{
+        width: 29%;
+    }
+    .grupo-productos{
+        font-size: 2.2em;
+    }
+    
+}
+
+@media screen and (min-width:1024px){
+    .container{
+        width: 1000px;
+    }
+    .productos-img{
+        height: 310px;
+    }
+    .productos-title{
+        font-size: 1.4em;
+    }
+
+    .productos-precio{
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (min-width:1600px){
+    .productos-img{
+        height: 300px;
+    }
+
+}
