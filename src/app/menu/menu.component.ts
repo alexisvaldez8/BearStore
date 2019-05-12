@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { MatDialog } from '@angular/material';
+import { CarritoComponent } from '../carrito/carrito.component';
+import { ReplaceSource } from 'webpack-sources';
+import {ConsultasService} from '../consultas.service';
+import { PatternValidator } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +14,14 @@ import * as $ from 'jquery';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+nombre:String;
+paterno:String;
+materno:String;
+correo:String;
+contrasenia:String;
+repcontrasenia:String;
+
+  constructor(public dialog: MatDialog, public http:ConsultasService) {}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
   
@@ -17,11 +29,39 @@ prueba(){
 	'use strict';
     document.getElementById('menu').classList.toggle('mostrar');
 }
+  registro(){
+		this.registrobd();
+	}
+	
+	registrobd(){
+		this.http.registroUsurio(this.nombre,this.paterno,this.materno,this.correo,this.contrasenia).then(
+			(data)=>{
+				console.log(data);
+				var result=data["registro"];
+				console.log(result);
+				if(result=="correcto"){
+					alert("Usuario registrado con exito!");
+				}
+			},(error)=>{
+				console.log("ERROR "+JSON.stringify(error));
+			}
+		);
+	}
 
-  mostrar(){
-    'use strict';
-    document.getElementById('menu').classList.toggle('mostrar');
-  }
+	name:String="troca";
+	animal:String="Perro";
+
+	abrirCarritoModal(){
+		const dialogRef = this.dialog.open(CarritoComponent, {
+      width: '800px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+	}
 
   ngOnInit() {
 

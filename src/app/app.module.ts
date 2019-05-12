@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -8,7 +10,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SeccionPComponent } from './seccion-p/seccion-p.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductoComponent } from './producto/producto.component';
-
+import { CarritoComponent } from './carrito/carrito.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from '../app/material';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
@@ -24,10 +28,17 @@ const routes:Routes=[
     InicioComponent,
     SeccionPComponent,
     FooterComponent,
-    ProductoComponent
+    ProductoComponent,
+    CarritoComponent
   ],
+  entryComponents: [CarritoComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
