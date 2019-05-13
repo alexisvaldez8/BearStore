@@ -14,6 +14,12 @@ import { PatternValidator } from '@angular/forms';
 })
 export class MenuComponent implements OnInit {
 
+hombre:String;
+mujer:String;
+nino:String;
+cuenta:String;
+contacto:String;
+
 nombre:String;
 paterno:String;
 materno:String;
@@ -132,6 +138,22 @@ prueba(){
 
 		autoplay();
 
+
+		var modal=document.getElementById("modal");
+    var modallogin = document.getElementById('id01');
+		var modalregistro = document.getElementById('id02');
+	
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modallogin) {
+				document.getElementById('id01').style.display='none';
+			}else{
+				if (event.target == modalregistro) {
+					document.getElementById('id02').style.display='none';
+				}
+
+			}
+		}
 		
 
   }

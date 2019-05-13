@@ -72,7 +72,7 @@
                 <label for="contra"><b>Contraseña</b></label>
                 <input type="password" placeholder="Ingresa tu contraseña" name="contra" required>
                   
-                <button type="submit" onclick="login();">Iniciar Sesion</button>
+                <button onclick="login()">Iniciar Sesion</button>
                 <label>
                   <input type="checkbox" checked="checked" name="remember">Recordar datos
                 </label>
@@ -113,7 +113,7 @@
                   <label for="confpsw"><b>Confirmar Contraseña</b></label>
                   <input type="password" placeholder="Confirma tu contraseña" [(ngModel)]="repcontrasenia" name="confpsw" required>
                     
-                  <button (click)="registro()" >Registrarse</button>
+                  <button (click)="registro()">Registrarse</button>
                   
                 </div>
             

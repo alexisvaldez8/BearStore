@@ -26,7 +26,6 @@ registroUsurio(nombre:String,paterno:String,materno:String,correo:String,contras
       reject(err);
     })
   });
-
 }
 
 

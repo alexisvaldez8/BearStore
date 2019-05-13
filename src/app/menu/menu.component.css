@@ -53,6 +53,9 @@ h1, h2, h3, h4, h5, h6{
     top: 2px;
     right: 5px;
 }
+.ocultar{
+    display: none;
+}
 /*--------------------------Estilos de menu------------------------------*/
 .main-nav{
     width: 100%;

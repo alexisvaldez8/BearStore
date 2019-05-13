@@ -17,7 +17,7 @@ parrafo = "Cada semana llegan productos completamente nuevos y disponibles para 
 
 
   ngOnInit() {
-    var modal=document.getElementById("modal");
+    /*var modal=document.getElementById("modal");
     var modallogin = document.getElementById('id01');
 		var modalregistro = document.getElementById('id02');
 		
@@ -33,7 +33,7 @@ parrafo = "Cada semana llegan productos completamente nuevos y disponibles para 
 			if (event.target == modalregistro) {
 				modal.style.display = "none";
 			}
-		}
+		}*/
 		
 		
 		function registro(){
