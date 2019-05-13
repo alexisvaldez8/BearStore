@@ -13,6 +13,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '../app/material';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
@@ -29,7 +30,8 @@ const routes:Routes=[
     SeccionPComponent,
     FooterComponent,
     ProductoComponent,
-    CarritoComponent
+    CarritoComponent,
+    CuentaComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

@@ -29,9 +29,21 @@ prueba(){
 	'use strict';
     document.getElementById('menu').classList.toggle('mostrar');
 }
+
   registro(){
-		this.registrobd();
-	}
+		if(this.nombre==null||this.paterno==null||this.materno==null||this.correo==null||this.contrasenia==null||this.repcontrasenia==null){
+			alert("Completa los campos vacíos");
+		}else{
+			if(this.contrasenia==this.repcontrasenia){
+				console.log("iguales");
+				this.registrobd();
+							}else{
+								alert("las contraseñas no coinciden");
+							}	
+					}
+			}
+
+		
 	
 	registrobd(){
 		this.http.registroUsurio(this.nombre,this.paterno,this.materno,this.correo,this.contrasenia).then(
@@ -51,6 +63,7 @@ prueba(){
 	name:String="troca";
 	animal:String="Perro";
 
+
 	abrirCarritoModal(){
 		const dialogRef = this.dialog.open(CarritoComponent, {
       width: '800px',
@@ -68,6 +81,7 @@ prueba(){
     $(".submenu").click(function(){
 			$(this).children("ul").slideToggle();
 		})
+
 
     var slider = $('#slider');
 		//almacenar botones
@@ -98,7 +112,8 @@ prueba(){
 		}
 
 		function autoplay() {
-			this.interval = setInterval(function(){
+			var interval;
+			interval = setInterval(function(){
 				moverD();
 			}, 5000);
 		}
