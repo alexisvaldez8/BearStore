@@ -50,6 +50,49 @@ h1, h2, h3, h4, h5, h6{
     max-width: 350px;
 }
 
+.producto__title{
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8em;
+}
+.producto__precio{
+    font-size: 1.4em;
+
+}
+.producto__talla{
+    padding: 5px;
+    font-size: 1.4em;
+}
+.producto__talla__boton{
+    padding: 5px;
+}
+.boton__talla{
+    margin: 5px 5px;
+    background: #0B4479;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    width: 55px;
+    padding: 3px;
+}
+.boton__talla:hover{
+    cursor: pointer;
+    background: rgba(116, 114, 114, 0.2);
+    color: black;
+}
+.boton__carrito{
+    background: #0B4479;
+    color:white;
+    padding: 3px;
+    border-radius: 8px;
+    width: 220px;
+}
+.boton__carrito:hover{
+    cursor: pointer;
+    background: rgba(116, 114, 114, 0.2);
+    color: black;
+}
+
+
 
 @media screen and (min-width:480px){
      
