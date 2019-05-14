@@ -16,13 +16,15 @@ import {MaterialModule} from '../app/material';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
       {path: 'seccion', component:SeccionPComponent},
       {path: 'producto', component:ProductoComponent},
       {path: 'pedidos', component:PedidosComponent},
-      {path: 'contacto', component:ContactoComponent}
+      {path: 'contacto', component:ContactoComponent},
+      {path: 'datos-usuario', component:DatosusuarioComponent}
 
   
 ]
@@ -38,7 +40,8 @@ const routes:Routes=[
     CarritoComponent,
     CuentaComponent,
     PedidosComponent,
-    ContactoComponent
+    ContactoComponent,
+    DatosusuarioComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

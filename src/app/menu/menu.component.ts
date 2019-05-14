@@ -35,6 +35,12 @@ prueba(){
 	'use strict';
     document.getElementById('menu').classList.toggle('mostrar');
 }
+mostrarLogin(){
+	document.getElementById('id01').style.display='block';
+}
+mostrarRegistro(){
+	document.getElementById('id02').style.display='block';
+}
 
   registro(){
 		if(this.nombre==null||this.paterno==null||this.materno==null||this.correo==null||this.contrasenia==null||this.repcontrasenia==null){
@@ -142,6 +148,9 @@ prueba(){
 		var modal=document.getElementById("modal");
     var modallogin = document.getElementById('id01');
 		var modalregistro = document.getElementById('id02');
+
+
+		
 	
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {

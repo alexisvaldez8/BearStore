@@ -8,7 +8,14 @@
     font-weight: 100;
     text-align: center;
 }
+.nosotros{
+    margin-top: 5px;
 
+}
+.info__nosotros{
+    padding: 8px;
+
+}
 .logo-nosotros{
     width: 400px; 
 }
@@ -28,9 +35,7 @@
 
 @media screen and (min-width:480px){
     
-    .column--50{
-        width: 49%;
-    }
+    
     .column--50-25{
         width: 49%;
     }
@@ -40,6 +45,9 @@
     }
 }
 @media screen and (min-width:768px){
+    .column--50{
+        width: 49%;
+    }
     
 }
 

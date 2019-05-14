@@ -41,15 +41,15 @@
                     <ul>
                             <li><a routerLink="/pedidos" routerLinkActive="active" class="a" href="">Mis Pedidos</a></li>
                             <li><a class="a" href="">Cambiar Contraseña</a></li>
-                            <li><a class="a" href="">Modificar Datos</a></li>
+                            <li><a routerLink="/datos-usuario" routerLinkActive="active" class="a" href="">Modificar Datos</a></li>
                     </ul>
                 </li>
-                <li class="opcion-menu"><a href="" class="ruta-menu">Contacto</a>
+                <li class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>
                 </li>
             </ul>
               <div class="user-icon">
-                  <a class="ruta-user-icon"><span onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="icon-user"></span>Iniciar Sesion</a>
-                  <a class="ruta-user-icon"><span onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="icon-pencil"></span>Registrarse</a>
+                  <a class="ruta-user-icon"><span (click)="mostrarLogin()" style="width:auto;" class="icon-user"></span>Iniciar Sesion</a>
+                  <a class="ruta-user-icon"><span (click)="mostrarRegistro()" style="width:auto;" class="icon-pencil"></span>Registrarse</a>
               </div>
           </div>
       </nav>

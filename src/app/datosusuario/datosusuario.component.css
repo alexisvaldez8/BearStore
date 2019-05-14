@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 0;
+}
+
+.main{
+    padding: 10px;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+.titulo__datos{
+    font-size: 1.9em;
+    padding: 20px;
+    text-align: center;
+}
+.subtitulo__datos{
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.label_formulario{
+    padding: 5px;
+}
+.label_formulario:hover{
+    cursor: pointer;
+}
+.boton__datos{
+    background: #0B4479;
+    color:white;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+@media screen and (min-width:480px){
+    
+    .main{
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .container{
+        width: 1000px;
+    }
+}

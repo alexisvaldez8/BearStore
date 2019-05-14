@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+
+<body>
+
+    <main class="main">
+
+        <div class="container">
+          <h2 class="titulo__datos">Informacion de {{nombre}}</h2>
+            <form>
+                <div class="form-group">
+                  <h2 class="subtitulo__datos">Contacto</h2>
+                  <label class="label_formulario" for="telefono">Telefono</label>
+                  <input type="text" class="form-control" [(ngModel)]="telefono" name="telefono" placeholder="Telefono">
+                  <h2 class="subtitulo__datos">Direccion</h2>
+                  <label class="label_formulario" for="cnumero">Calle y Numero</label>
+                  <input type="text" class="form-control" name="cnumero" placeholder="Calle y Numero" [(ngModel)]="callenumero">
+                  <label class="label_formulario" for="colonia">Colonia o Fraccionamiento</label>
+                  <input type="text" class="form-control" name="colonia" placeholder="Col./Fracc." [(ngModel)]="colonia">
+                  <label class="label_formulario" for="cpostal">Codigo postal</label>
+                  <input type="text" class="form-control" name="cpostal" placeholder="Codigo postal" [(ngModel)]="codigopostal">
+                  <label class="label_formulario" for="ciudad">Ciudad</label>
+                  <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" [(ngModel)]="ciudad">
+                  <label class="label_formulario" for="estado">Estado</label>
+                  <input type="text" class="form-control" name="estado" placeholder="Estado" [(ngModel)]="estado">
+                  </div>
+
+                <button type="button" class="boton__datos" (click)=enviarDatos() >Guardar</button>
+      
+      
+              </form>
+        </div>
+          
+      </main>
+
+</body>
+
+
+
+<app-footer></app-footer>
