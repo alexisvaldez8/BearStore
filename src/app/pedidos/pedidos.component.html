@@ -2,20 +2,22 @@
 <body>
   <h2 class="pedidos__titulo">{{titulo}}</h2>
   <div class="container">
-    <div class="table-responsive">
-    <table class="table table-bordered table-hover ">
-      <tr class="active">
+    <div class="table-responsive contenedor__tabla__pedidos">
+    <table class="table table-bordered tabla__pedidos">
+      <tr class="active tabla__pedidos__titulo">
         <td># Pedido</td>
         <td>Fecha</td>
         <td>Total</td>
       </tr>
-      <tr>
-        <td></td>
+      <tr *ngFor="let ped of pedidos">
+        <td>{{ped.id}}</td>
+        <td>{{ped.fecha}}</td>
+        <td>{{ped.totalPagado}}</td>
       </tr>
     </table>
   </div>
   </div>  
 
-
-  <button (click)="muestrapedidos()">muestra</button>
 </body>
+
+<app-footer></app-footer>

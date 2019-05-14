@@ -2,3 +2,35 @@
     padding: 10px;
     text-align: center;
 }
+.contenedor__tabla__pedidos{
+    margin: 0 auto;
+    width: 300px;
+}
+.tabla__pedidos{
+    border: #0B4479 3px solid;
+}
+.tabla__pedidos__titulo{
+    color:white;
+    background: #0B4479;
+}
+
+
+@media screen and (min-width:480px){
+    .contenedor__tabla__pedidos{
+        width: 420px;
+    
+    }
+}
+
+@media screen and (min-width:768px){
+    .contenedor__tabla__pedidos{
+        width: 600px;
+    
+    }
+}
+@media screen and (min-width:1024px){
+    .contenedor__tabla__pedidos{
+        width: 720px;
+    
+    }
+}

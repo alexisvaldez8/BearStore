@@ -15,12 +15,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '../app/material';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
       {path: 'seccion', component:SeccionPComponent},
       {path: 'producto', component:ProductoComponent},
-      {path: 'pedidos', component:PedidosComponent}
+      {path: 'pedidos', component:PedidosComponent},
+      {path: 'contacto', component:ContactoComponent}
 
   
 ]
@@ -35,7 +37,8 @@ const routes:Routes=[
     ProductoComponent,
     CarritoComponent,
     CuentaComponent,
-    PedidosComponent
+    PedidosComponent,
+    ContactoComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [
