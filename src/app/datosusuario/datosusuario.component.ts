@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormField } from '@angular/material';
 import {NgForm} from '@angular/forms';
-
-
 @Component({
   selector: 'app-datosusuario',
   templateUrl: './datosusuario.component.html',
@@ -24,6 +22,7 @@ export class DatosusuarioComponent implements OnInit {
   enviarDatos(){
     console.log(this.telefono+" "+this.callenumero+" "+this.colonia+" "+this.codigopostal+" "+this.ciudad+" "+this.estado);
   }
+  
   ngOnInit() {
   }
 
