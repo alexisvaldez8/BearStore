@@ -20,6 +20,9 @@ nino:String;
 cuenta:String;
 contacto:String;
 
+email:String;
+password:String;
+
 nombre:String;
 paterno:String;
 materno:String;
@@ -55,8 +58,14 @@ mostrarRegistro(){
 					}
 			}
 
-		
-	
+			login(){
+				if(this.email==null||this.password==null){
+					alert("Completa los campos vacíos");
+				}else{
+						this.loginbd();		
+						}
+				}
+
 	registrobd(){
 		this.http.registroUsurio(this.nombre,this.paterno,this.materno,this.correo,this.contrasenia).then(
 			(data)=>{
@@ -72,9 +81,23 @@ mostrarRegistro(){
 		);
 	}
 
+	loginbd(){
+		this.http.loginUsurio(this.email,this.password).then(
+			(data)=>{
+				console.log(data);
+				var result=data["login"];
+				console.log(result);
+				if(result=="correcto"){
+					alert("Sesion iniciada con exito con exito!");
+				}
+			},(error)=>{
+				console.log("ERROR "+JSON.stringify(error));
+			}
+		);
+	}
+
 	name:String="troca";
 	animal:String="Perro";
-
 
 	abrirCarritoModal(){
 		const dialogRef = this.dialog.open(CarritoComponent, {

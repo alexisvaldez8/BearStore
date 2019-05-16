@@ -45,6 +45,20 @@ regresaPedidos(){
   
 }
 
+loginUsurio(correo:String,contrasenia:String){
+  //console.log("antes return");
+  var urllogin=this.url+"login.php?correo="+correo+"&contrasena="+contrasenia;
+  console.log(urllogin);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urllogin).subscribe(data=>{
+      console.log("sesion iniciada");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
 
 
 
