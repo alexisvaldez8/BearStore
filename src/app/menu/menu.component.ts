@@ -14,6 +14,13 @@ import { PatternValidator } from '@angular/forms';
 })
 export class MenuComponent implements OnInit {
 
+ articulosCarrito=0;
+totalCarrito=0;
+
+sumarArticulos(){
+	this.articulosCarrito++;
+}
+
 hombre:String;
 mujer:String;
 nino:String;
@@ -52,6 +59,7 @@ mostrarRegistro(){
 			if(this.contrasenia==this.repcontrasenia){
 				console.log("iguales");
 				this.registrobd();
+				document.getElementById('id02').style.display='none';
 							}else{
 								alert("las contraseñas no coinciden");
 							}	
@@ -62,7 +70,8 @@ mostrarRegistro(){
 				if(this.email==null||this.password==null){
 					alert("Completa los campos vacíos");
 				}else{
-						this.loginbd();		
+						this.loginbd();
+						document.getElementById('id01').style.display='none';
 						}
 				}
 
@@ -88,7 +97,7 @@ mostrarRegistro(){
 				var result=data["login"];
 				console.log(result);
 				if(result=="correcto"){
-					alert("Sesion iniciada con exito con exito!");
+					alert("Sesion iniciada con exito!");
 				}
 			},(error)=>{
 				console.log("ERROR "+JSON.stringify(error));
