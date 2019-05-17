@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConsultasService} from '../consultas.service';
+
 
 @Component({
   selector: 'app-seccion-p',
@@ -7,13 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeccionPComponent implements OnInit {
 
-  constructor() {
+  constructor(public http:ConsultasService) {
+    this.traerProductos();
     
    }
     seccion:any;
     genero:any;
     titulo;any;
 
+productos_img;
+productos_nombre;
+traerProductos(){
+  this.http.traerImagenes().then(
+    (data)=>{
+      console.log("imprime data...");
+      console.log(data);
+      this.productos_img=data;
+      this.productos_nombre=data;
+      this.productos_img=this.productos_img.productos;
+      this.productos_nombre=this.productos_nombre.productosnombre;
+      console.log("llenado...");
+      console.log(this.productos_img);
+      console.log(this.productos_nombre);
+    },(error)=>{
+      console.log("ERROR "+JSON.stringify(error));
+    }
+  );
+}
+   
   
   ngOnInit() {
     this.seccion="Playeras"

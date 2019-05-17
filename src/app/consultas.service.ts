@@ -59,6 +59,21 @@ loginUsurio(correo:String,contrasenia:String){
   });
 }
 
+traerImagenes(){
+  var urlimagenesseccion=this.url+"imagenesSeccion.php";
+  console.log(urlimagenesseccion);
+
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlimagenesseccion).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+  
+}
+
 
 
 
