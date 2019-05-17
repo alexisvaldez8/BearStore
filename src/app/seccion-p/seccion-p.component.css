@@ -10,7 +10,8 @@
     align-items: center;
 }
 .column{
-    width: 100%;    
+    width: 100%;
+    align-content: center;    
 }
 .titulo{
     margin-top: 5px;

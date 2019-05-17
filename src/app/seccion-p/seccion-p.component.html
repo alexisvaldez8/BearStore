@@ -1,21 +1,16 @@
 <app-menu></app-menu>
 
 <main class="main">
-
     <section class="descripcion productos">
             <h4 class="grupo-productos">{{titulo}}</h4>
             <div class="container container--flex">
                 <div class="column column-30 column--50" *ngFor="let prod of productos_img" >
                         <img src="{{prod.ruta}}" class="productos-img">
-                    <div class="productos-title">Capitan America</div>
-                    <div class="productos-precio">$269.00</div>
+                    <div class="productos-title">{{prod.nombre}}</div>
+                    <div class="productos-precio">${{prod.precio}}</div>
                 </div>
-                
             </div>
     </section>
-    
-
 </main>
-
 
 <app-footer></app-footer>
