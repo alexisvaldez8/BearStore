@@ -17,6 +17,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
+import { AltaProductosComponent } from './alta-productos/alta-productos.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
@@ -24,7 +25,8 @@ const routes:Routes=[
       {path: 'producto', component:ProductoComponent},
       {path: 'pedidos', component:PedidosComponent},
       {path: 'contacto', component:ContactoComponent},
-      {path: 'datos-usuario', component:DatosusuarioComponent}
+      {path: 'datos-usuario', component:DatosusuarioComponent},
+      {path: 'alta-productos', component:AltaProductosComponent}
 
   
 ]
@@ -41,7 +43,8 @@ const routes:Routes=[
     CuentaComponent,
     PedidosComponent,
     ContactoComponent,
-    DatosusuarioComponent
+    DatosusuarioComponent,
+    AltaProductosComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

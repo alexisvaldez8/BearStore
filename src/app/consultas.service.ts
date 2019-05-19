@@ -74,6 +74,22 @@ traerImagenes(){
   
 }
 
+altaProductos(nombreproducto:String,stock:String,precio:String,talla:String,genero:String,color:String,fecha:String){
+  console.log("antes return");
+
+  var urlregistroProducto=this.url+"registroProductos.php?nombreproducto="+nombreproducto+"&stock="+stock+"&precio="+precio+"&talla="+talla+"&genero="+genero+"&color="+color+"&fechapub="+fecha;
+  console.log(urlregistroProducto);
+
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlregistroProducto).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
 
 
 

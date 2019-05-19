@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+
+<body>
+
+    <main class="main">
+
+        <div class="container">
+          <h2 class="titulo__datos">Alta Productos</h2>
+            <form>
+                <div class="form-group">
+                  <label class="label_formulario" for="nombre-producto">Nombre</label>
+                  <input type="text" class="form-control" [(ngModel)]="nombreproducto" name="nombreproducto" placeholder="Ej. Capitan America Logo">
+                  <label class="label_formulario" for="stock">Stock</label>
+                  <input type="text" class="form-control" name="stock" placeholder="10" [(ngModel)]="stock">
+                  <label class="label_formulario" for="precio">Precio</label>
+                  <input type="text" class="form-control" name="precio" placeholder="$269.00" [(ngModel)]="precio">
+                  <label class="label_formulario" for="talla">Talla Disponible</label>
+                  <input type="text" class="form-control" name="talla" placeholder="Chica, Mediana, Grande" [(ngModel)]="talla">
+                  <label class="label_formulario" for="genero">Genero</label>
+                  <input type="text" class="form-control" name="genero" placeholder="Masculino" [(ngModel)]="genero">
+                  <label class="label_formulario" for="color">Color</label>
+                  <input type="text" class="form-control" name="color" placeholder="Azul" [(ngModel)]="color">
+                  <label class="label_formulario" for="fecha">Fecha de Publicacion</label>
+                  <input type="text" class="form-control" name="fecha" readonly="readonly" placeholder="{{fecha}}" [(ngModel)]="fecha">
+
+                  </div>
+
+                <button type="button" class="boton__datos" (click)=registroProductos() >Guardar</button>
+      
+      
+              </form>
+        </div>
+          
+      </main>
+
+</body>
+
+
+
+<app-footer></app-footer>
