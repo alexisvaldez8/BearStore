@@ -19,23 +19,21 @@
                 <li class="opcion-menu"><a href="" class="ruta-menu ruta-menu-select">Inicio</a></li>
                 <li class="opcion-menu submenu"><a class="ruta-menu">Hombre</a>
                   <ul>
-                          <li><a [routerLink]="['/productos', 'hombre', 'playeras' ]" class="a">Playeras</a></li>
-                          <li><a [routerLink]="['/productos', 'hombre', 'sudaderas']" class="a" >Sudaderas</a></li>
-                          <li><a [routerLink]="['/productos', 'hombre', 'chamarras']" class="a">Chamarras</a></li>
+                          <li><a [routerLink]="['/productos', 'hombre', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
+                          <li><a [routerLink]="['/productos', 'hombre', 'sudaderas']" class="a" (click)="recuperarSeccion()">Sudaderas</a></li>
+                          <li><a [routerLink]="['/productos', 'hombre', 'chamarras']" class="a" (click)="recuperarSeccion()">Chamarras</a></li>
                   </ul>
               </li>
                 <li class="opcion-menu submenu"><a  class="ruta-menu">Mujer</a>
                     <ul>
-                          <li><a [routerLink]="['/productos', 'mujer', 'playeras' ]" class="a" >Playeras</a></li>
-                          <li><a [routerLink]="['/productos', 'mujer', 'sudaderas']" class="a" >Sudaderas</a></li>
-                          <li><a [routerLink]="['/productos', 'mujer', 'chamarras']" class="a" >Chamarras</a></li>
+                          <li><a [routerLink]="['/productos', 'mujer', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
+                          <li><a [routerLink]="['/productos', 'mujer', 'sudaderas']" class="a" (click)="recuperarSeccion()">Sudaderas</a></li>
+                          <li><a [routerLink]="['/productos', 'mujer', 'chamarras']" class="a" (click)="recuperarSeccion()">Chamarras</a></li>
                     </ul>
                 </li>
                 <li class="opcion-menu submenu"><a  class="ruta-menu">Niño</a>
                     <ul>
-                          <li><a [routerLink]="['/productos', 'nino', 'playeras' ]" routerLinkActive="active" class="a" >Playeras</a></li>
-                          <li><a [routerLink]="['/productos', 'nino', 'sudaderas']" routerLinkActive="active" class="a" >Sudaderas</a></li>
-                          <li><a [routerLink]="['/productos', 'nino', 'chamarras']" routerLinkActive="active" class="a" >Chamarras</a></li>
+                          <li><a [routerLink]="['/productos', 'nino', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
                     </ul>
                 </li>
                 <li class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>

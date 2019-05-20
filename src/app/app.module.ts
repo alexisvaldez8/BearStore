@@ -24,13 +24,14 @@ const routes:Routes=[
       {path: '', component:InicioComponent},
       {path: 'productos/:genero/:seccion', component:SeccionPComponent},
       {path: 'producto', component:ProductoComponent},
-      {path: 'pedidos/:idusuario', component:PedidosComponent},
+      {path: 'pedidos', component:PedidosComponent},
       {path: 'contacto', component:ContactoComponent},
       {path: 'datos-usuario', component:DatosusuarioComponent},
-      {path: 'alta-productos', component:AltaProductosComponent}
+      {path: 'alta-productos', component:AltaProductosComponent},
 
   
 ]
+RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
 
 @NgModule({
   declarations: [

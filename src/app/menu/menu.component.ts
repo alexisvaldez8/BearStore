@@ -30,9 +30,7 @@ verificarSesion(){
 
 }
 
-actualizar(){
-	location.reload();
-}
+
 
 sumarArticulos(){
 	this.articulosCarrito++;
@@ -114,13 +112,12 @@ mostrarRegistro(){
 			(data)=>{
 				console.log(data);
 				this.usuarioSesion=data;
-				this.usuarioSesion=this.usuarioSesion.usuarios;
-				console.log("new "+this.usuarioSesion);
-				var result=data["login"];
-				console.log(result);
 				if(this.usuarioSesion!=null){
 					alert("¡Sesion iniciada con exito!");
 					this.sesion="Cerrar Sesion";
+					//console.log(this.usuarioSesion.usuarios);
+					this.usuarioSesion=this.usuarioSesion.usuarios;
+					console.log(this.usuarioSesion);
 				}else{
 					alert("¡Usuario y/o contraseña invalidos!");
 				}
@@ -144,8 +141,13 @@ mostrarRegistro(){
       this.animal = result;
     });
 	}
+	;
+
+	
 
   ngOnInit() {
+		
+		
 
     $(".submenu").click(function(){
 			$(this).children("ul").slideToggle();

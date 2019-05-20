@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {ConsultasService} from '../consultas.service';
+import { RouterModule, Routes} from '@angular/router';
+
 
 
 @Component({
@@ -19,6 +21,8 @@ export class SeccionPComponent implements OnInit {
   }
     titulo;any;
 
+
+
 productos_img;
 traerProductos(){
   this.http.traerImagenes(this.genero,this.categoria).then(
@@ -34,6 +38,7 @@ traerProductos(){
     }
   );
 }
+
   
   ngOnInit() {
 
@@ -46,18 +51,16 @@ traerProductos(){
         this.categoria = params.seccion;
       }
     );
-
+      
+    
     this.traerProductos();
-
 
   this.titulo=this.categoria+" para "+this.genero;
 
-    function recuperarSeccion() {
-      //aqui vamos a recuperar el genero y categoria a mostrar
-      }
-    function recuperarGenero() {
-    //aqui vamos a recuperar el genero y categoria a mostrar
-    }
+    
   }
+
+
+  
 
 }
