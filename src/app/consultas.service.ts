@@ -59,8 +59,8 @@ loginUsurio(correo:String,contrasenia:String){
   });
 }
 
-traerImagenes(){
-  var urlimagenesseccion=this.url+"imagenesSeccion.php";
+traerImagenes(genero:String,categoria:String){
+  var urlimagenesseccion=this.url+"imagenesSeccion.php?genero="+genero+"&categoria="+categoria;
   console.log(urlimagenesseccion);
 
   return new Promise((resolve, reject)=>{

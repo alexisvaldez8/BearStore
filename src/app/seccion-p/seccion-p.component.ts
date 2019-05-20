@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import {ConsultasService} from '../consultas.service';
 
 
@@ -9,17 +10,18 @@ import {ConsultasService} from '../consultas.service';
 })
 export class SeccionPComponent implements OnInit {
 
-  constructor(public http:ConsultasService) {
-    this.traerProductos();
+  genero;
+  categoria;
+
+  
+  constructor(public http:ConsultasService,private rutaActiva: ActivatedRoute) {
     
-   }
-    seccion:any;
-    genero:any;
+  }
     titulo;any;
 
 productos_img;
 traerProductos(){
-  this.http.traerImagenes().then(
+  this.http.traerImagenes(this.genero,this.categoria).then(
     (data)=>{
       console.log("imprime data...");
       console.log(data);
@@ -32,14 +34,24 @@ traerProductos(){
     }
   );
 }
-   
   
   ngOnInit() {
-    this.seccion="Playeras"
-  
-  this.genero="Hombre";
 
-  this.titulo=this.seccion+" para "+this.genero;
+    this.genero=this.rutaActiva.snapshot.params.genero;
+    this.categoria=this.rutaActiva.snapshot.params.seccion;
+
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.genero = params.genero;
+        this.categoria = params.seccion;
+      }
+    );
+
+    this.traerProductos();
+
+
+  this.titulo=this.categoria+" para "+this.genero;
+
     function recuperarSeccion() {
       //aqui vamos a recuperar el genero y categoria a mostrar
       }

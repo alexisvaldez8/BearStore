@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import {ConsultasService} from '../consultas.service';
+import { ActivatedRoute, Params } from '@angular/router';
+
 
 
 
@@ -11,7 +13,7 @@ import {ConsultasService} from '../consultas.service';
 })
 export class PedidosComponent implements OnInit {
   
-  constructor(public http:ConsultasService) {
+  constructor(public http:ConsultasService,private rutaActiva: ActivatedRoute) {
     //this.muestrapedidos();
     this.traerPedidos();
   }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -21,9 +22,9 @@ import { AltaProductosComponent } from './alta-productos/alta-productos.componen
 
 const routes:Routes=[
       {path: '', component:InicioComponent},
-      {path: 'seccion', component:SeccionPComponent},
+      {path: 'productos/:genero/:seccion', component:SeccionPComponent},
       {path: 'producto', component:ProductoComponent},
-      {path: 'pedidos', component:PedidosComponent},
+      {path: 'pedidos/:idusuario', component:PedidosComponent},
       {path: 'contacto', component:ContactoComponent},
       {path: 'datos-usuario', component:DatosusuarioComponent},
       {path: 'alta-productos', component:AltaProductosComponent}

@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Input, Output } from '@angular/core';
 import * as $ from 'jquery';
 import { MatDialog } from '@angular/material';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { ReplaceSource } from 'webpack-sources';
 import {ConsultasService} from '../consultas.service';
 import { PatternValidator } from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
+
 
 
 @Component({
@@ -16,6 +18,21 @@ export class MenuComponent implements OnInit {
 
  articulosCarrito=0;
 totalCarrito=0;
+sesion="Iniciar Sesion"
+estadoSesion:boolean;
+public usuarioSesion;
+
+
+conjuntoSeccion:[{ Seccion:'Playeras'}, {Seccion:'Sudaderas'}, {Seccion:'Chamarras'}
+];
+
+verificarSesion(){
+
+}
+
+actualizar(){
+	location.reload();
+}
 
 sumarArticulos(){
 	this.articulosCarrito++;
@@ -37,7 +54,9 @@ correo:String;
 contrasenia:String;
 repcontrasenia:String;
 
-  constructor(public dialog: MatDialog, public http:ConsultasService) {}
+  constructor(public dialog: MatDialog, public http:ConsultasService) {
+
+	}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
   
@@ -94,10 +113,16 @@ mostrarRegistro(){
 		this.http.loginUsurio(this.email,this.password).then(
 			(data)=>{
 				console.log(data);
+				this.usuarioSesion=data;
+				this.usuarioSesion=this.usuarioSesion.usuarios;
+				console.log("new "+this.usuarioSesion);
 				var result=data["login"];
 				console.log(result);
-				if(result=="correcto"){
-					alert("Sesion iniciada con exito!");
+				if(this.usuarioSesion!=null){
+					alert("¡Sesion iniciada con exito!");
+					this.sesion="Cerrar Sesion";
+				}else{
+					alert("¡Usuario y/o contraseña invalidos!");
 				}
 			},(error)=>{
 				console.log("ERROR "+JSON.stringify(error));
