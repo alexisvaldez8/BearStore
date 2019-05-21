@@ -62,7 +62,6 @@ loginUsurio(correo:String,contrasenia:String){
 traerImagenes(genero:String,categoria:String){
   var urlimagenesseccion=this.url+"imagenesSeccion.php?genero="+genero+"&categoria="+categoria;
   console.log(urlimagenesseccion);
-
   return new Promise((resolve, reject)=>{
     this.http.get(urlimagenesseccion).subscribe(data=>{
       console.log("suscribe");
@@ -70,8 +69,20 @@ traerImagenes(genero:String,categoria:String){
     },(err)=>{
       reject(err);
     })
-  });
-  
+  }); 
+}
+
+traerProducto(){
+  var urliproducto=this.url+"producto.php";
+  console.log(urliproducto);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urliproducto).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  }); 
 }
 
 altaProductos(nombreproducto:String,stock:String,precio:String,talla:String,genero:String,color:String,fecha:String){
