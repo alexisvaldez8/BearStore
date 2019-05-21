@@ -57,6 +57,12 @@ registroProductobd(){
       console.log(result);
       if(result=="correcto"){
         alert("Producto Agregado con exito!");
+        this.nombreproducto="";
+        this.stock="";
+        this.precio="";
+        this.talla="";
+        this.genero="";
+        this.color="";
       }
     },(error)=>{
       console.log("ERROR "+JSON.stringify(error));

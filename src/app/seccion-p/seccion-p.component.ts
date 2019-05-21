@@ -39,6 +39,23 @@ traerProductos(){
   );
 }
 
+
+evaluarc(){
+  if(this.categoria=="playeras"){
+    this.categoria="Playeras"
+  }else{
+    if(this.categoria=="sudaderas"){
+      this.categoria="Sudaderas";
+    }else{
+      this.categoria="Chamarras";
+    }
+  }
+}
+evaluarg(){
+  if(this.genero=="nino"){
+    this.genero="Niño";
+  }
+}
   
   ngOnInit() {
 
@@ -54,8 +71,10 @@ traerProductos(){
       
     
     this.traerProductos();
-
-  this.titulo=this.categoria+" para "+this.genero;
+      this.evaluarg();
+      this.evaluarc();
+    this.titulo=this.categoria+" para "+this.genero;
+    
 
     
   }
