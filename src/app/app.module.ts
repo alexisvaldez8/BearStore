@@ -23,7 +23,7 @@ import { AltaProductosComponent } from './alta-productos/alta-productos.componen
 const routes:Routes=[
       {path: '', component:InicioComponent},
       {path: 'productos/:genero/:seccion', component:SeccionPComponent},
-      {path: 'producto', component:ProductoComponent},
+      {path: 'producto/:idproducto', component:ProductoComponent},
       {path: 'pedidos', component:PedidosComponent},
       {path: 'contacto', component:ContactoComponent},
       {path: 'datos-usuario', component:DatosusuarioComponent},

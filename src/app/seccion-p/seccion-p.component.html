@@ -6,7 +6,8 @@
             <div class="container container--flex">
                 <div class="column column-30 column--50" *ngFor="let prod of productos_img" >
                         <img src="{{prod.ruta}}" class="productos-img">
-                    <div class="productos-title">{{prod.nombre}}</div>
+                        <div class="productos-title">
+                        <a [routerLink]="['/producto',prod.idproducto]">{{prod.nombre}}</a></div>
                     <div class="productos-precio">${{prod.precio}}</div>
                 </div>
             </div>

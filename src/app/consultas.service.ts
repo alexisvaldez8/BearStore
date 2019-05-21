@@ -72,8 +72,8 @@ traerImagenes(genero:String,categoria:String){
   }); 
 }
 
-traerProducto(){
-  var urliproducto=this.url+"producto.php";
+traerProducto(idproducto:String){
+  var urliproducto=this.url+"producto.php?idproducto="+idproducto;
   console.log(urliproducto);
   return new Promise((resolve, reject)=>{
     this.http.get(urliproducto).subscribe(data=>{
