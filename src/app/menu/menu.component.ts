@@ -18,19 +18,44 @@ export class MenuComponent implements OnInit {
 
  articulosCarrito=0;
 totalCarrito=0;
-sesion="Iniciar Sesion"
-estadoSesion:boolean;
-public usuarioSesion;
+sesion;
 
+usuarioActual=null;
+usuarioSesion;
 
 conjuntoSeccion:[{ Seccion:'Playeras'}, {Seccion:'Sudaderas'}, {Seccion:'Chamarras'}
 ];
 
-verificarSesion(){
+grabarlocals(){
+
+	let nombre:string="Alexis";
+	let producto={
+		idproducto:"1",
+		nombre:"Spiderman logo",
+		precio:"269.00"
+	}
+
+	//localStorage.setItem("Sesion","");
+
 
 }
 
+comprobarSesion(){
+	if(localStorage.getItem("Sesion")==null){
+			this.sesion="Iniciar Sesion";
+		}else{
+			this.usuarioActual=localStorage.getItem("Sesion");
+			this.usuarioSesion= JSON.parse(this.usuarioActual);
+			console.log(this.usuarioSesion);
+			this.sesion="Cerrar Sesion";
+		}
+}
 
+cerrarSesion(){
+	this.usuarioActual=null;
+	localStorage.removeItem("Sesion");
+	this.sesion="Iniciar Sesion"
+}
 
 sumarArticulos(){
 	this.articulosCarrito++;
@@ -53,7 +78,8 @@ contrasenia:String;
 repcontrasenia:String;
 
   constructor(public dialog: MatDialog, public http:ConsultasService) {
-
+		this.comprobarSesion();
+		this.grabarlocals();
 	}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
@@ -63,7 +89,11 @@ prueba(){
     document.getElementById('menu').classList.toggle('mostrar');
 }
 mostrarLogin(){
-	document.getElementById('id01').style.display='block';
+	if(this.sesion=="Iniciar Sesion"){
+		document.getElementById('id01').style.display='block';
+	}else{
+		this.cerrarSesion();
+	}
 }
 mostrarRegistro(){
 	document.getElementById('id02').style.display='block';
@@ -117,6 +147,7 @@ mostrarRegistro(){
 					this.sesion="Cerrar Sesion";
 					//console.log(this.usuarioSesion.usuarios);
 					this.usuarioSesion=this.usuarioSesion.usuarios;
+					localStorage.setItem("Sesion", JSON.stringify(this.usuarioSesion));
 					console.log(this.usuarioSesion);
 				}else{
 					alert("¡Usuario y/o contraseña invalidos!");
