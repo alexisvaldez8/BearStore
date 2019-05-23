@@ -69,6 +69,7 @@ export class DatosusuarioComponent implements OnInit {
   
   enviarDatos(){
     this.actualizarDatos();
+    location.reload();
     //console.log(this.telefono+" "+this.callenumero+" "+this.colonia+" "+this.codigopostal+" "+this.ciudad+" "+this.estado);
   }
 
