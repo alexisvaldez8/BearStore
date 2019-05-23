@@ -79,7 +79,7 @@ repcontrasenia:String;
 
   constructor(public dialog: MatDialog, public http:ConsultasService) {
 		this.comprobarSesion();
-		this.grabarlocals();
+		//this.grabarlocals();
 	}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
@@ -92,7 +92,14 @@ mostrarLogin(){
 	if(this.sesion=="Iniciar Sesion"){
 		document.getElementById('id01').style.display='block';
 	}else{
-		this.cerrarSesion();
+		if(confirm("¿Deseas salir?")){
+			alert("Sesion terminada exitosamente");
+			location.reload();
+			this.cerrarSesion();
+			
+		}else{
+			//alert("Usted cancelo la acción para guardar");
+		}
 	}
 }
 mostrarRegistro(){
@@ -144,6 +151,7 @@ mostrarRegistro(){
 				this.usuarioSesion=data;
 				if(this.usuarioSesion!=null){
 					alert("¡Sesion iniciada con exito!");
+					location.reload();
 					this.sesion="Cerrar Sesion";
 					//console.log(this.usuarioSesion.usuarios);
 					this.usuarioSesion=this.usuarioSesion.usuarios;
@@ -160,7 +168,6 @@ mostrarRegistro(){
 
 	name:String="troca";
 	animal:String="Perro";
-
 	abrirCarritoModal(){
 		const dialogRef = this.dialog.open(CarritoComponent, {
       width: '800px',
@@ -174,16 +181,11 @@ mostrarRegistro(){
 	}
 	;
 
-	
-
-  ngOnInit() {
+  	ngOnInit() {
 		
-		
-
     $(".submenu").click(function(){
 			$(this).children("ul").slideToggle();
 		})
-
 
     var slider = $('#slider');
 		//almacenar botones

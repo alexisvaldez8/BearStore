@@ -14,10 +14,8 @@ export class ConsultasService {
    
 registroUsurio(nombre:String,paterno:String,materno:String,correo:String,contrasenia:String){
   console.log("antes return");
-
   var urlregistro=this.url+"registro.php?nombre="+nombre+"&apellido_p="+paterno+"&apellido_m="+materno+"&correo="+correo+"&contrasenia="+contrasenia;
   console.log(urlregistro);
-
   return new Promise((resolve, reject)=>{
     this.http.get(urlregistro).subscribe(data=>{
       console.log("suscribe");
@@ -28,12 +26,9 @@ registroUsurio(nombre:String,paterno:String,materno:String,correo:String,contras
   });
 }
 
-regresaPedidos(){
-  console.log("antes return");
-
-  var urlpedidos=this.url+"traerPedidos.php";
+regresaPedidos(usuario:String){
+  var urlpedidos=this.url+"traerPedidos.php?idusuario="+usuario;
   console.log(urlpedidos);
-
   return new Promise((resolve, reject)=>{
     this.http.get(urlpedidos).subscribe(data=>{
       console.log("suscribe");
@@ -41,8 +36,20 @@ regresaPedidos(){
     },(err)=>{
       reject(err);
     })
-  });
-  
+  }); 
+}
+
+regresaDatosUsuario(usuario:String){
+  var urldatosusuario=this.url+"datosUsuario.php?idusuario="+usuario;
+  console.log(urldatosusuario);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urldatosusuario).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  }); 
 }
 
 loginUsurio(correo:String,contrasenia:String){
@@ -87,12 +94,24 @@ traerProducto(idproducto:String){
 
 altaProductos(nombreproducto:String,stock:String,precio:String,talla:String,genero:String,color:String,fecha:String){
   console.log("antes return");
-
   var urlregistroProducto=this.url+"registroProductos.php?nombreproducto="+nombreproducto+"&stock="+stock+"&precio="+precio+"&talla="+talla+"&genero="+genero+"&color="+color+"&fechapub="+fecha;
   console.log(urlregistroProducto);
-
   return new Promise((resolve, reject)=>{
     this.http.get(urlregistroProducto).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
+modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:String,codigopostal:String,ciudad:String,estado:String){
+  console.log("antes return");
+  var urlmodificarDatosUsuario=this.url+"actualizarDatosUsuario.php?idusuario="+id+"&telefono="+telefono+"&callenumero="+callenumero+"&colonia="+colonia+"&codigopostal="+codigopostal+"&ciudad="+ciudad+"&estado="+estado;
+  console.log(urlmodificarDatosUsuario);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlmodificarDatosUsuario).subscribe(data=>{
       console.log("suscribe");
         resolve(data);
     },(err)=>{
