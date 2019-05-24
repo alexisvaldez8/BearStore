@@ -14,10 +14,18 @@
                     <div class="producto__precio">Precio ${{pro.precio}}</div>
                     <div class="producto__talla">Selecciona tu Talla</div>
                     <div class="producto__talla__boton">
-                        <button class="boton__talla">CH</button>
-                        <button class="boton__talla">M</button>
-                        <button class="boton__talla">G</button>
-                        <button class="boton__talla">XL</button>
+                        <label for="chica" class="boton__talla">CH</label>
+                        <input type="checkbox" class="talla_cbx" id="chica" value="chica">
+                        <label for="mediana" class="boton__talla">M</label>
+                        <input type="checkbox" class="talla_cbx" id="mediana" value="mediana">
+                        <label for="grande" class="boton__talla">G</label>
+                        <input type="checkbox" class="talla_cbx" id="grande" value="grande">
+                        <label for="extragrande" class="boton__talla">XL</label>                        
+                        <input type="checkbox" class="talla_cbx" id="extragrande" value="extragrande">
+                    </div>
+                    <div class="producto__talla">
+                        <h3 class="cantidad__titulo">Cantidad:</h3>
+                        <input type="number" name="cantidad" min="1" max="5">
                     </div>
                     <div class="producto__talla__boton">
                         <button class="boton__carrito">AÑADIR AL CARRITO</button>

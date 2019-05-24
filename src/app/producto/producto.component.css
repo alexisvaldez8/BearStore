@@ -65,6 +65,12 @@ h1, h2, h3, h4, h5, h6{
 .producto__talla__boton{
     padding: 5px;
 }
+.cantidad__titulo{
+    font-size: 1em;
+}
+.talla_cbx{
+    display: none;
+}
 .boton__talla{
     margin: 5px 5px;
     background: #0B4479;
@@ -76,8 +82,13 @@ h1, h2, h3, h4, h5, h6{
 }
 .boton__talla:hover{
     cursor: pointer;
-    background: rgba(116, 114, 114, 0.2);
-    color: black;
+    background: rgb(23, 112, 196);
+    color: white;
+    font-weight: bold;
+}
+.dissable{
+    color: darkgrey;
+   background-color: grey;
 }
 .boton__carrito{
     background: #0B4479;

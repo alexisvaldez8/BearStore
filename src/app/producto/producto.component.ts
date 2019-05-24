@@ -13,7 +13,11 @@ idproducto;
     
 
   }
-
+lblchica;
+dchica;
+dmediana;
+dgrande;
+dextragrande;
 producto;
 nombreProducto:String;
 precioProducto:String;
@@ -25,15 +29,22 @@ precioProducto:String;
         this.producto=data;
         this.producto=this.producto.producto;
         console.log("llenado...");
+        this.dchica=this.producto[0].stockchica;
+        this.dmediana=this.producto[0].stockmediana;
+        this.dgrande=this.producto[0].stockgrande;
+        this.dextragrande=this.producto[0].stockextragrande;
         console.log(this.producto);
-        console.log(this.nombreProducto);
       },(error)=>{
         console.log("ERROR "+JSON.stringify(error));
       }
     );
   }
-
-  
+disable;
+  comprobarDisponibilidad(){
+    if(this.dchica==0||this.dchica==null){
+      this.disable='disabled';
+    }
+  }
 
   descripcionP="• Playera manga corta, cuello redondo • Estampado en serigrafía sin tacto • 50% algodón 50% poliéster  • Hecho en México"
 
@@ -47,6 +58,7 @@ precioProducto:String;
       }
     );
     this.traerProducto(); 
+  
   }
 
 }
