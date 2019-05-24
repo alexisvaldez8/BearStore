@@ -21,7 +21,7 @@ import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
 import { AltaProductosComponent } from './alta-productos/alta-productos.component';
 
 const routes:Routes=[
-      {path: '', component:InicioComponent},
+      {path: '', component:InicioComponent, pathMatch:"full"},
       {path: 'productos/:genero/:seccion', component:SeccionPComponent},
       {path: 'producto/:idproducto', component:ProductoComponent},
       {path: 'pedidos', component:PedidosComponent},

@@ -15,9 +15,11 @@ export class AltaProductosComponent implements OnInit {
 
 
   nombreproducto:String;
-  stock:String;
+  tallachica:String;
+  tallamediana:String;
+  tallagrande:String;
+  tallaxl:String;
   precio:String;
-  talla:String;
   genero:String;
   color:String;
   fecha;
@@ -41,7 +43,7 @@ return this.fecha;
 }
   
 registroProductos(){
-  if(this.nombreproducto==null||this.stock==null||this.precio==null||this.talla==null||this.genero==null||this.color==null||this.fecha==null){
+  if(this.nombreproducto==null||this.tallachica==null||this.tallamediana==null||this.tallagrande==null||this.tallaxl==null||this.precio==null||this.genero==null||this.color==null||this.fecha==null){
     alert("Completa los campos vacíos");
   }else{
     	this.registroProductobd();
@@ -50,7 +52,8 @@ registroProductos(){
 
   
 registroProductobd(){
-  this.http.altaProductos(this.nombreproducto,this.stock,this.precio,this.talla,this.genero,this.color,this.fecha).then(
+  this.http.altaProductos(this.nombreproducto,this.tallachica,this.tallamediana,this.tallagrande,this.tallaxl
+    ,this.precio,this.genero,this.color,this.fecha).then(
     (data)=>{
       console.log(data);
       var result=data["registro"];
@@ -58,9 +61,11 @@ registroProductobd(){
       if(result=="correcto"){
         alert("Producto Agregado con exito!");
         this.nombreproducto="";
-        this.stock="";
+        this.tallachica="";
+        this.tallamediana="";
+        this.tallagrande="";
+        this.tallaxl="";
         this.precio="";
-        this.talla="";
         this.genero="";
         this.color="";
       }

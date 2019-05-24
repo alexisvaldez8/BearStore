@@ -92,9 +92,9 @@ traerProducto(idproducto:String){
   }); 
 }
 
-altaProductos(nombreproducto:String,stock:String,precio:String,talla:String,genero:String,color:String,fecha:String){
+altaProductos(nombreproducto:String,chica:String,mediana:String,grande:String,xl:String,precio:String,genero:String,color:String,fecha:String){
   console.log("antes return");
-  var urlregistroProducto=this.url+"registroProductos.php?nombreproducto="+nombreproducto+"&stock="+stock+"&precio="+precio+"&talla="+talla+"&genero="+genero+"&color="+color+"&fechapub="+fecha;
+  var urlregistroProducto=this.url+"registroProductos.php?nombreproducto="+nombreproducto+"&stockchica="+chica+"&stockmediana="+mediana+"&stockgrande="+grande+"&stockxl="+xl+"&precio="+precio+"&genero="+genero+"&color="+color+"&fechapub="+fecha;
   console.log(urlregistroProducto);
   return new Promise((resolve, reject)=>{
     this.http.get(urlregistroProducto).subscribe(data=>{
@@ -120,10 +120,33 @@ modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:Strin
   });
 }
 
+agregarCarrito(idusuario:String,idproducto:String,cantidad:String){
+  console.log("antes return");
+  var urlcarrito=this.url+"carrito.php?idusuario="+idusuario+"&idproducto="+idproducto+"&cantidad="+cantidad;
+  console.log(urlcarrito);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlcarrito).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
 
+verCarrito(idusuario:String){
+  var urlcarrito=this.url+"verCarrito.php?idusuario="+idusuario;
+  console.log(urlcarrito);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlcarrito).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  }); 
 
-
-
+}
 
 }
 

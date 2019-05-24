@@ -1,22 +1,21 @@
-<div class="container modal-prueba">      
-    <!-- Modal -->
-    <div  modal-container id="myModal" role="dialog">
-      <div class="modal-dialog">
-      
-        <!-- Modal content-->
-        <div class="modal-content ">
-          <div class="modal-header">
-            <h4 class="modal-title">Carrito de Compras</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <p>{{CarritoMensaje}}</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+<body>
+  <h2 class="pedidos__titulo">{{titulo}}</h2>
+  <h2 class="pedidos__titulo">Usuario: {{nombreusuario}}</h2>
+  <div class="container">
+    <div class="table-responsive contenedor__tabla__pedidos">
+    <table class="table table-bordered tabla__pedidos">
+      <tr class="active tabla__pedidos__titulo">
+        <td>Cantidad</td>
+        <td>Producto</td>
+        <td>Talla</td>
+      </tr>
+      <tr *ngFor="let ped of pedidos">
+        <td>{{ped.idpedido}}</td>
+        <td>{{ped.fecha}}</td>
+        <td>{{ped.total}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>  
 
+</body>
