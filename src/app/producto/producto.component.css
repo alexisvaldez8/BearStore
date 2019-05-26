@@ -80,16 +80,33 @@ h1, h2, h3, h4, h5, h6{
     width: 55px;
     padding: 3px;
 }
+.boton__talla_select{
+    margin: 5px 5px;
+    background: #0B4479;
+    color:white;
+    border-radius: 10px;
+    font-size: 1.4em;
+    text-align: center;
+    width: 55px;
+    padding: 3px;
+}
+.boton__talla_agotado{
+    margin: 5px 5px;
+    background: rgb(0, 0, 0);
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    width: 55px;
+    padding: 3px;
+    text-decoration: line-through;
+}
 .boton__talla:hover{
     cursor: pointer;
     background: rgb(23, 112, 196);
     color: white;
     font-weight: bold;
 }
-.dissable{
-    color: darkgrey;
-   background-color: grey;
-}
+
 .boton__carrito{
     background: #0B4479;
     color:white;

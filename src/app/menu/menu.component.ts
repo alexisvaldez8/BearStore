@@ -168,6 +168,7 @@ mostrarRegistro(){
 
 	name:String="troca";
 	animal:String="Perro";
+	
 	abrirCarritoModal(){
 		const dialogRef = this.dialog.open(CarritoComponent, {
       width: '800px',

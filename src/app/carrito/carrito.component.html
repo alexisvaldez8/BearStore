@@ -5,14 +5,16 @@
     <div class="table-responsive contenedor__tabla__pedidos">
     <table class="table table-bordered tabla__pedidos">
       <tr class="active tabla__pedidos__titulo">
-        <td>Cantidad</td>
         <td>Producto</td>
+        <td>Cantidad</td>
         <td>Talla</td>
+        <td>.</td>
       </tr>
-      <tr *ngFor="let ped of pedidos">
-        <td>{{ped.idpedido}}</td>
-        <td>{{ped.fecha}}</td>
-        <td>{{ped.total}}</td>
+      <tr *ngFor="let car of carrito">
+        <td>{{car.nombre}}</td>
+        <td>{{car.cantidad}}</td>
+        <td>{{car.talla}}</td>
+        <td><button>Eliminar</button></td>
       </tr>
     </table>
   </div>

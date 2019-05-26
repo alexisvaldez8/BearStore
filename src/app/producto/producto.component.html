@@ -14,21 +14,21 @@
                     <div class="producto__precio">Precio ${{pro.precio}}</div>
                     <div class="producto__talla">Selecciona tu Talla</div>
                     <div class="producto__talla__boton">
-                        <label for="chica" class="boton__talla">CH</label>
-                        <input type="checkbox" class="talla_cbx" id="chica" value="chica">
-                        <label for="mediana" class="boton__talla">M</label>
-                        <input type="checkbox" class="talla_cbx" id="mediana" value="mediana">
-                        <label for="grande" class="boton__talla">G</label>
-                        <input type="checkbox" class="talla_cbx" id="grande" value="grande">
-                        <label for="extragrande" class="boton__talla">XL</label>                        
-                        <input type="checkbox" class="talla_cbx" id="extragrande" value="extragrande">
+                        <label for="chica" [class]="claseChica">CH</label>
+                        <input type="radio" class="talla_cbx" name="talla" [(ngModel)]="tallaselect" [id]="chica" value="chica">
+                        <label for="mediana" [class]="claseMediana">M</label>
+                        <input type="radio" class="talla_cbx" name="talla" [(ngModel)]="tallaselect" [id]="mediana" value="mediana">
+                        <label for="grande" [class]="claseGrande">G</label>
+                        <input type="radio" class="talla_cbx" name="talla" [(ngModel)]="tallaselect" [id]="grande" value="grande">
+                        <label for="extragrande" [class]="claseExtraGrande">XL</label>                        
+                        <input type="radio" class="talla_cbx" name="talla" [(ngModel)]="tallaselect" [id]="extragrande" value="extragrande">
                     </div>
                     <div class="producto__talla">
                         <h3 class="cantidad__titulo">Cantidad:</h3>
-                        <input type="number" name="cantidad" min="1" max="5">
+                        <input type="number" name="cantidad" [(ngModel)]="cantidadselect" min="1" max="5">
                     </div>
                     <div class="producto__talla__boton">
-                        <button class="boton__carrito">AÑADIR AL CARRITO</button>
+                        <button class="boton__carrito" (click)="getProducto()">AÑADIR AL CARRITO</button>
                     </div>
                     <div class="producto__descripcion__titulo">Descripcion
                         <h2 class="producto__descripcion">• Playera manga corta, cuello redondo <br>
