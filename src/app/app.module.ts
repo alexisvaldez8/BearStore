@@ -19,16 +19,17 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
 import { AltaProductosComponent } from './alta-productos/alta-productos.component';
+import { CambiarcontrasenaComponent } from './cambiarcontrasena/cambiarcontrasena.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
       {path: 'productos/:genero/:seccion', component:SeccionPComponent},
       {path: 'producto/:idproducto', component:ProductoComponent},
-      {path: 'pedidos', component:PedidosComponent},
+      {path: 'pedidos/:idusuario', component:PedidosComponent},
       {path: 'contacto', component:ContactoComponent},
-      {path: 'datos-usuario', component:DatosusuarioComponent},
+      {path: 'datos-usuario/:idusuario', component:DatosusuarioComponent},
       {path: 'alta-productos', component:AltaProductosComponent},
-
+      {path: 'cambiar-contrasena/:idusuario', component:CambiarcontrasenaComponent},
   
 ]
 RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
@@ -46,7 +47,8 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     PedidosComponent,
     ContactoComponent,
     DatosusuarioComponent,
-    AltaProductosComponent
+    AltaProductosComponent,
+    CambiarcontrasenaComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

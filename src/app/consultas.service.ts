@@ -120,6 +120,20 @@ modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:Strin
   });
 }
 
+cambiarPass(id:String,password:String){
+  console.log("antes return");
+  var urlcambiarpass=this.url+"cambiarPass.php?idusuario="+id+"&contrasena="+password;
+  console.log(urlcambiarpass);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlcambiarpass).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
 agregarCarrito(idusuario:String,idproducto:String,talla:String,cantidad:String,total){
   console.log("antes return");
   var urlcarrito=this.url+"carrito.php?idusuario="+idusuario+"&idproducto="+idproducto+"&talla="+talla+"&cantidad="+cantidad+"&total="+total;

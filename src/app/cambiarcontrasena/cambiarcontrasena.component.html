@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<body>
+
+    <main class="main">
+
+        <div class="container">
+          <h2 class="titulo__datos">Cambiar Contraseña: {{nombreusuario}}</h2>
+            <form>
+                <div class="form-group">
+                  <label class="label_formulario" for="pass">Contraseña nueva:</label>
+                  <input type="password" class="form-control" [(ngModel)]="pass" name="pass" placeholder="Ej. Aa12345678">
+                  <label class="label_formulario" for="confirmarpass">Confirmar contraseña:</label>
+                  <input type="password" class="form-control" [(ngModel)]="confirmarpass" name="confirmarpass" placeholder="Ej. Aa12345678">
+                  </div>
+              </form>
+              <button type="button" class="boton__datos" (click)=cambiarContrasena() id="boton_pass" >Guardar</button>
+
+        </div>
+          
+      </main>
+
+</body>
+
+
+
+<app-footer></app-footer>

@@ -38,9 +38,9 @@
                 </li>
                 <li class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>
                     <ul>
-                            <li><a routerLink="/pedidos" routerLinkActive="active" class="a" href="">Mis Pedidos</a></li>
-                            <li><a class="a" href="">Cambiar Contraseña</a></li>
-                            <li><a routerLink="/datos-usuario" routerLinkActive="active" class="a" href="">Modificar Datos</a></li>
+                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/pedidos',user.id_usuario]" class="a" href="">Mis Pedidos</a></li>
+                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/cambiar-contrasena',user.id_usuario]" class="a" href="">Cambiar Contraseña</a></li>
+                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></li>
                     </ul>
                 </li>
                 <li class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>

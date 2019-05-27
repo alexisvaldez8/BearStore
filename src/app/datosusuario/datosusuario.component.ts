@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormField } from '@angular/material';
 import {ConsultasService} from '../consultas.service';
+import { ActivatedRoute, Params } from '@angular/router';
 import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-datosusuario',
@@ -8,7 +9,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./datosusuario.component.css']
 })
 export class DatosusuarioComponent implements OnInit {
-
+  idusuario;
   telefono:String;
   callenumero:String;
   colonia:String;
@@ -37,6 +38,8 @@ export class DatosusuarioComponent implements OnInit {
 
   }
 
+  
+
   traerdatos(){
     this.http.regresaDatosUsuario(this.usuarioSesion).then(
       (data)=>{
@@ -60,7 +63,7 @@ export class DatosusuarioComponent implements OnInit {
     );
   }
 
-  constructor(public http:ConsultasService) {
+  constructor(public http:ConsultasService,private rutaActiva: ActivatedRoute) {
     this.traerUsuario();
     this.traerdatos();
    }
@@ -91,6 +94,13 @@ export class DatosusuarioComponent implements OnInit {
 	}
   
   ngOnInit() {
+    this.idusuario=this.rutaActiva.snapshot.params.idproducto;
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.idusuario = params.idusuario;
+      }
+    );
+  }
   }
 
-}
+
