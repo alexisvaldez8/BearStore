@@ -83,7 +83,9 @@ repcontrasenia:String;
 	}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
-  
+	
+	
+
 prueba(){
 	'use strict';
     document.getElementById('menu').classList.toggle('mostrar');

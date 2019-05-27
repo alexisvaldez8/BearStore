@@ -120,9 +120,9 @@ modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:Strin
   });
 }
 
-agregarCarrito(idusuario:String,idproducto:String,talla:String,cantidad:String){
+agregarCarrito(idusuario:String,idproducto:String,talla:String,cantidad:String,total){
   console.log("antes return");
-  var urlcarrito=this.url+"carrito.php?idusuario="+idusuario+"&idproducto="+idproducto+"&talla="+talla+"&cantidad="+cantidad;
+  var urlcarrito=this.url+"carrito.php?idusuario="+idusuario+"&idproducto="+idproducto+"&talla="+talla+"&cantidad="+cantidad+"&total="+total;
   console.log(urlcarrito);
   return new Promise((resolve, reject)=>{
     this.http.get(urlcarrito).subscribe(data=>{

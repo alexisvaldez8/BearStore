@@ -54,6 +54,11 @@ dextragrande;
 producto;
 nombreProducto:String;
 precioProducto:String;
+
+precioInt;
+precioprod;
+total;
+numArticulos;
   traerProducto(){
     this.http.traerProducto(this.idproducto).then(
       (data)=>{
@@ -70,13 +75,17 @@ precioProducto:String;
         this.comprobarGrande();
         this.dextragrande=this.producto[0].stockextragrande;
         this.comprobarXL();
+        this.precioprod=this.producto[0].precio;
         console.log(this.producto);
+        this.precioInt=parseInt(this.precioprod);
+        console.log("precio: "+this.precioprod);
+        console.log("precio int: "+this.precioInt);
       },(error)=>{
         console.log("ERROR "+JSON.stringify(error));
       }
     );
   }
-disable;
+
   comprobarChica(){
     if(this.dchica==0||this.dchica==null){
       this.claseChica="boton__talla_agotado";
@@ -123,30 +132,33 @@ getProducto(){
     this.idproducto=this.producto[0].idproducto;
     console.log("este producto es "+this.idproducto);
 
-    this.tallaS=this.tallaselect;
     
 
     this.cantidad=this.cantidadselect;
     if(this.cantidad==undefined){
-      this.cantidad='1';
+      this.cantidad=1;
     }else{
       console.log("la cantidad es "+this.cantidad);
     }
     console.log("la cantidad es "+this.cantidad);
 
+    this.total=this.cantidad*this.precioInt;
+    this.tallaS=this.tallaselect;
     if(this.tallaS==undefined){
       alert("No haz selccionado una talla");
     }else{
       console.log("la talla es "+this.tallaS);
       this.agregarCarrito();
+      console.log(this.total);
+
     }
-    
+
 
 }
 
 
   agregarCarrito(){
-    this.http.agregarCarrito(this.idusuario,this.idproducto,this.tallaS,this.cantidad).then(
+    this.http.agregarCarrito(this.idusuario,this.idproducto,this.tallaS,this.cantidad,this.total).then(
       (data)=>{
         console.log(data);
         var result=data["registro"];

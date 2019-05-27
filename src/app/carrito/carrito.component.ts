@@ -25,6 +25,7 @@ carritop=[
      {cantidad:'4',producto:'Capitan',talla:'mediana'}
   ];
 nombreusuario;
+numArticulos;
   regresaCarrito(){
     console.log(this.jsonusuario);
     console.log(this.idusuario);
@@ -34,11 +35,29 @@ nombreusuario;
         this.carrito=data;
         this.carrito=this.carrito.carrito;
         this.nombreusuario=this.jsonusuario[0].nombre;
+        this.numArticulos=this.carrito.length;
+        console.log("articulos "+this.numArticulos);
+        this.getTotalPedido();
 			},(error)=>{
 				console.log("ERROR "+JSON.stringify(error));
 			}
 		);
-	}
+  }
+  
+  totalpedido
+  totalpedidoInt;
+   totalFinal=0;
+  getTotalPedido(){
+    for(let i = 0; i < this.carrito.length; i++){
+        this.totalpedido=this.carrito[i].total;
+        this.totalpedidoInt=parseInt(this.carrito[i].total);
+        console.log("totales "+this.totalpedidoInt);
+        this.totalFinal=this.totalFinal+this.totalpedidoInt;       
+        console.log(i+" "+this.totalFinal);
+      
+    }
+    console.log("total pedido: "+this.totalFinal);
+  }
 
   ngOnInit() {
   }

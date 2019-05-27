@@ -8,16 +8,21 @@
         <td>Producto</td>
         <td>Cantidad</td>
         <td>Talla</td>
-        <td>.</td>
+        <td>Precio</td>
+        <td>Total</td>
+        <td></td>
       </tr>
       <tr *ngFor="let car of carrito">
         <td>{{car.nombre}}</td>
         <td>{{car.cantidad}}</td>
         <td>{{car.talla}}</td>
+        <td>${{car.precio}}</td>
+        <td>${{car.total}}</td>
         <td><button>Eliminar</button></td>
       </tr>
     </table>
   </div>
+  <h2>Total del pedido:${{totalFinal}}</h2>
   </div>  
 
 </body>
