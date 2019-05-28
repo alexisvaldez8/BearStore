@@ -163,6 +163,7 @@ getProducto(){
         console.log(result);
         if(result=="correcto"){
           alert("Producto Agregado al carrito con exito!");
+          location.reload();
         }
       },(error)=>{
         console.log("ERROR "+JSON.stringify(error));

@@ -13,7 +13,9 @@ export class CarritoComponent implements OnInit {
     this.regresaCarrito();
    }
 
-   
+   mostrarid(id){
+      console.log("este es el id: "+id);
+   }
 
   carrito
   jsonusuario=JSON.parse(localStorage.getItem("Sesion"));
@@ -64,6 +66,19 @@ numArticulos=0;
     console.log("total pedido: "+this.totalFinal);
     localStorage.setItem("TotalCarrito",JSON.stringify(this.totalFinal));
   }
+
+  eliminarCarritobd(idcarrito){
+    this.http.eliminarCarrito(idcarrito).then(
+      (data)=>{
+        alert("¡Articulo eliminado con exito!");
+        location.reload();
+        console.log(data);
+      },(error)=>{
+        console.log("ERROR "+JSON.stringify(error));
+      }
+    );
+  }
+
 
   ngOnInit() {
   }

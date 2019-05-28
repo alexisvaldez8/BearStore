@@ -208,11 +208,9 @@ mostrarRegistro(){
 	animal:String="Perro";
 	
 	abrirCarritoModal(){
-
 		if(this.usuarioSesion==undefined){
 			alert("¡No haz iniciado sesion!")
 		}else{
-			
 			const dialogRef = this.dialog.open(CarritoComponent, {
 				width: '800px',
 				data: {name: this.name, animal: this.animal}
