@@ -79,7 +79,7 @@ repcontrasenia:String;
 
   constructor(public dialog: MatDialog, public http:ConsultasService) {
 		this.comprobarSesion();
-		//this.grabarlocals();
+		this.mostrarC();
 	}
 
 	CarritoMensaje="Tu carrito de compras esta vacio";
@@ -122,15 +122,6 @@ mostrarRegistro(){
 					}
 			}
 
-			login(){
-				if(this.email==null||this.password==null){
-					alert("Completa los campos vacíos");
-				}else{
-						this.loginbd();
-						document.getElementById('id01').style.display='none';
-						}
-				}
-
 	registrobd(){
 		this.http.registroUsurio(this.nombre,this.paterno,this.materno,this.correo,this.contrasenia).then(
 			(data)=>{
@@ -146,27 +137,39 @@ mostrarRegistro(){
 		);
 	}
 
-	loginbd(){
-		this.http.loginUsurio(this.email,this.password).then(
-			(data)=>{
-				console.log(data);
-				this.usuarioSesion=data;
-				if(this.usuarioSesion!=null){
-					alert("¡Sesion iniciada con exito!");
-					location.reload();
-					this.sesion="Cerrar Sesion";
-					//console.log(this.usuarioSesion.usuarios);
-					this.usuarioSesion=this.usuarioSesion.usuarios;
-					localStorage.setItem("Sesion", JSON.stringify(this.usuarioSesion));
-					console.log(this.usuarioSesion);
-				}else{
-					alert("¡Usuario y/o contraseña invalidos!");
+mostrarC(){
+	console.log("email: "+this.email+" pass: "+this.password);
+}
+
+	login(){
+		this.mostrarC();
+		if(this.email==""||this.password==""){
+			alert("Completa los campos vacíos");
+		}else{
+			this.http.loginUsurio(this.email,this.password).then(
+				(data)=>{
+					console.log(data);
+					this.usuarioSesion=data;
+					if(this.usuarioSesion==""){
+						alert("¡Usuario y/o contraseña invalidos!");
+					}else{
+						document.getElementById('id01').style.display='none';
+						alert("¡Sesion iniciada con exito!");
+						location.reload();
+						this.sesion="Cerrar Sesion";
+						//console.log(this.usuarioSesion.usuarios);
+						this.usuarioSesion=this.usuarioSesion.usuarios;
+						localStorage.setItem("Sesion", JSON.stringify(this.usuarioSesion));
+						console.log(this.usuarioSesion);
+					}
+				},(error)=>{
+					console.log("ERROR "+JSON.stringify(error));
 				}
-			},(error)=>{
-				console.log("ERROR "+JSON.stringify(error));
+			);
 			}
-		);
+	
 	}
+
 
 	name:String="troca";
 	animal:String="Perro";
