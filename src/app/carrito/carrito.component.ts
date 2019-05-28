@@ -40,6 +40,7 @@ numArticulos=0;
         console.log("aqui llega: "+this.carrito);
         if(this.carrito==undefined){
           alert("¡Tu carrito de compras esta vacio!")
+          location.reload();
         }else{
         this.numArticulos=this.carrito.length;
         console.log("articulos "+this.numArticulos);
@@ -67,16 +68,25 @@ numArticulos=0;
     localStorage.setItem("TotalCarrito",JSON.stringify(this.totalFinal));
   }
 
+  id_carrito=0;
   eliminarCarritobd(idcarrito){
-    this.http.eliminarCarrito(idcarrito).then(
-      (data)=>{
-        alert("¡Articulo eliminado con exito!");
-        location.reload();
-        console.log(data);
-      },(error)=>{
-        console.log("ERROR "+JSON.stringify(error));
-      }
-    );
+    this.id_carrito=idcarrito;
+    console.log("este mero es: "+this.id_carrito);
+    if(confirm("¿Deseas eliminar este articulo de tu carrito?")){
+      this.http.eliminarCarrito(this.id_carrito).then(
+        (data)=>{
+          location.reload();
+          console.log(data);
+        },(error)=>{
+          console.log("ERROR "+JSON.stringify(error));
+        }
+      );
+      alert("¡Articulo eliminado con exito!");
+      location.reload();
+    }else{
+
+    }
+  
   }
 
 

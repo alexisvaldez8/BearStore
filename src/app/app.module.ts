@@ -20,6 +20,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
 import { AltaProductosComponent } from './alta-productos/alta-productos.component';
 import { CambiarcontrasenaComponent } from './cambiarcontrasena/cambiarcontrasena.component';
+import { CompletarcompraComponent } from './completarcompra/completarcompra.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -48,7 +49,8 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     ContactoComponent,
     DatosusuarioComponent,
     AltaProductosComponent,
-    CambiarcontrasenaComponent
+    CambiarcontrasenaComponent,
+    CompletarcompraComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [
