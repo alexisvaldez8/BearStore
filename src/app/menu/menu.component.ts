@@ -43,6 +43,7 @@ grabarlocals(){
 comprobarSesion(){
 	if(localStorage.getItem("Sesion")==null){
 			this.sesion="Iniciar Sesion";
+			console.log(this.usuarioSesion);
 		}else{
 			this.usuarioActual=localStorage.getItem("Sesion");
 			this.usuarioSesion= JSON.parse(this.usuarioActual);
@@ -175,17 +176,22 @@ mostrarC(){
 	animal:String="Perro";
 	
 	abrirCarritoModal(){
-		const dialogRef = this.dialog.open(CarritoComponent, {
-      width: '800px',
-      data: {name: this.name, animal: this.animal}
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
+		if(this.usuarioSesion==undefined){
+			alert("¡No haz iniciado sesion!")
+		}else{
+			const dialogRef = this.dialog.open(CarritoComponent, {
+				width: '800px',
+				data: {name: this.name, animal: this.animal}
+			});
+	
+			dialogRef.afterClosed().subscribe(result => {
+				console.log('The dialog was closed');
+				this.animal = result;
+			});
+		}
 	}
-	;
+	
 
   	ngOnInit() {
 		

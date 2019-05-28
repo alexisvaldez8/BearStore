@@ -25,19 +25,24 @@ carritop=[
      {cantidad:'4',producto:'Capitan',talla:'mediana'}
   ];
 nombreusuario;
-numArticulos;
+numArticulos=0;
   regresaCarrito(){
     console.log(this.jsonusuario);
     console.log(this.idusuario);
+    this.nombreusuario=this.jsonusuario[0].nombre;
 		this.http.verCarrito(this.idusuario).then(
 			(data)=>{
-				console.log(data);
+        console.log(data);
         this.carrito=data;
         this.carrito=this.carrito.carrito;
-        this.nombreusuario=this.jsonusuario[0].nombre;
+        console.log("aqui llega: "+this.carrito);
+        if(this.carrito==undefined){
+          alert("¡Tu carrito de compras esta vacio!")
+        }else{
         this.numArticulos=this.carrito.length;
         console.log("articulos "+this.numArticulos);
         this.getTotalPedido();
+        }
 			},(error)=>{
 				console.log("ERROR "+JSON.stringify(error));
 			}
