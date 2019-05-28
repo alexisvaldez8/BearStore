@@ -16,46 +16,91 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+	constructor(public dialog: MatDialog, public http:ConsultasService) {
+		this.comprobarSesion();
+		this.validar();
+	}
+
  articulosCarrito=0;
 totalCarrito=0;
 sesion;
 
+banderaSesion:boolean;
 usuarioActual=null;
 usuarioSesion;
 
 conjuntoSeccion:[{ Seccion:'Playeras'}, {Seccion:'Sudaderas'}, {Seccion:'Chamarras'}
 ];
 
-grabarlocals(){
-
-	let nombre:string="Alexis";
-	let producto={
-		idproducto:"1",
-		nombre:"Spiderman logo",
-		precio:"269.00"
-	}
-
-	//localStorage.setItem("Sesion","");
-
-
-}
-
 comprobarSesion(){
 	if(localStorage.getItem("Sesion")==null){
+		this.banderaSesion=false;
 			this.sesion="Iniciar Sesion";
 			console.log(this.usuarioSesion);
+			this.totalCarrito=0;
+			this.articulosCarrito=0;
 		}else{
+			this.banderaSesion=true;
 			this.usuarioActual=localStorage.getItem("Sesion");
 			this.usuarioSesion= JSON.parse(this.usuarioActual);
 			console.log(this.usuarioSesion);
 			this.sesion="Cerrar Sesion";
 		}
 }
+carrito;
+numArticulos
+totalpedido; totalpedidoInt; totalFinal=0;
+comprobarCarrito(){
+	this.http.verCarrito(this.usuarioSesion[0].id_usuario).then(
+		(data)=>{
+			console.log(data);
+			this.carrito=data;
+			this.carrito=this.carrito.carrito;
+			console.log("aqui llega: "+this.carrito);
+			if(this.carrito==undefined){
+			}else{
+			this.numArticulos=this.carrito.length;
+			console.log("articulos "+this.numArticulos);
+			localStorage.setItem("Articulos",JSON.stringify(this.numArticulos));
+			this.articulosCarrito=JSON.parse(localStorage.getItem("Articulos"));
+			for(let i = 0; i < this.carrito.length; i++){
+        this.totalpedido=this.carrito[i].total;
+        this.totalpedidoInt=parseInt(this.carrito[i].total);
+        console.log("totales "+this.totalpedidoInt);
+        this.totalFinal=this.totalFinal+this.totalpedidoInt;       
+        console.log(i+" "+this.totalFinal);  
+    }
+    console.log("total pedido: "+this.totalFinal);
+		localStorage.setItem("TotalCarrito",JSON.stringify(this.totalFinal));
+		this.totalCarrito=JSON.parse(localStorage.getItem("TotalCarrito"));
+
+			}
+		},(error)=>{
+			console.log("ERROR "+JSON.stringify(error));
+		}
+	);
+}
+
+
+validar(){
+	if(this.usuarioSesion==undefined){
+
+	}else{
+		this.comprobarCarrito();
+	}
+}
+
 
 cerrarSesion(){
 	this.usuarioActual=null;
+	this.banderaSesion=false;
 	localStorage.removeItem("Sesion");
+	localStorage.removeItem("Articulos");
+	localStorage.removeItem("TotalCarrito");
+	this.articulosCarrito=0;
+	this.totalCarrito=0;
 	this.sesion="Iniciar Sesion"
+
 }
 
 sumarArticulos(){
@@ -78,12 +123,7 @@ correo:String;
 contrasenia:String;
 repcontrasenia:String;
 
-  constructor(public dialog: MatDialog, public http:ConsultasService) {
-		this.comprobarSesion();
-		this.mostrarC();
-	}
-
-	CarritoMensaje="Tu carrito de compras esta vacio";
+CarritoMensaje="Tu carrito de compras esta vacio";
 	
 	
 
@@ -99,7 +139,6 @@ mostrarLogin(){
 			alert("Sesion terminada exitosamente");
 			location.reload();
 			this.cerrarSesion();
-			
 		}else{
 			//alert("Usted cancelo la acción para guardar");
 		}
@@ -138,12 +177,7 @@ mostrarRegistro(){
 		);
 	}
 
-mostrarC(){
-	console.log("email: "+this.email+" pass: "+this.password);
-}
-
 	login(){
-		this.mostrarC();
 		if(this.email==""||this.password==""){
 			alert("Completa los campos vacíos");
 		}else{
@@ -156,9 +190,9 @@ mostrarC(){
 					}else{
 						document.getElementById('id01').style.display='none';
 						alert("¡Sesion iniciada con exito!");
+						this.banderaSesion=true;
 						location.reload();
 						this.sesion="Cerrar Sesion";
-						//console.log(this.usuarioSesion.usuarios);
 						this.usuarioSesion=this.usuarioSesion.usuarios;
 						localStorage.setItem("Sesion", JSON.stringify(this.usuarioSesion));
 						console.log(this.usuarioSesion);
@@ -168,9 +202,7 @@ mostrarC(){
 				}
 			);
 			}
-	
 	}
-
 
 	name:String="troca";
 	animal:String="Perro";
@@ -180,6 +212,7 @@ mostrarC(){
 		if(this.usuarioSesion==undefined){
 			alert("¡No haz iniciado sesion!")
 		}else{
+			
 			const dialogRef = this.dialog.open(CarritoComponent, {
 				width: '800px',
 				data: {name: this.name, animal: this.animal}

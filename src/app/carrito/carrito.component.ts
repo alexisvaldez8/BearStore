@@ -41,6 +41,7 @@ numArticulos=0;
         }else{
         this.numArticulos=this.carrito.length;
         console.log("articulos "+this.numArticulos);
+        localStorage.setItem("Articulos",JSON.stringify(this.numArticulos));
         this.getTotalPedido();
         }
 			},(error)=>{
@@ -58,10 +59,10 @@ numArticulos=0;
         this.totalpedidoInt=parseInt(this.carrito[i].total);
         console.log("totales "+this.totalpedidoInt);
         this.totalFinal=this.totalFinal+this.totalpedidoInt;       
-        console.log(i+" "+this.totalFinal);
-      
+        console.log(i+" "+this.totalFinal);  
     }
     console.log("total pedido: "+this.totalFinal);
+    localStorage.setItem("TotalCarrito",JSON.stringify(this.totalFinal));
   }
 
   ngOnInit() {

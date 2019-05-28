@@ -132,8 +132,6 @@ getProducto(){
     this.idproducto=this.producto[0].idproducto;
     console.log("este producto es "+this.idproducto);
 
-    
-
     this.cantidad=this.cantidadselect;
     if(this.cantidad==undefined){
       this.cantidad=1;
