@@ -1,3 +1,36 @@
-<p>
-  completarcompra works!
-</p>
+<header class="main-header">
+  <div class="container container--flex">
+      <div class="logo-container column column--50">
+          <img src="../assets/img/logo.png" alt="" class="logo">
+      </div>
+          <div class="main-header-principal column column--50">
+              <p class="main-header-principal-carrito">
+              </p>
+          </div>
+  </div>
+</header>
+<body>
+  <div class="container">
+    <h2 class="titulo__completar">Tu pedido esta casi listo</h2>
+    <h3 class="subtitulo__completar">Verifica tu informacion</h3>
+    <h4 class="subtitulo2__completar">Informacion de Contacto</h4>
+    <p class="titulo__contacto">{{nombrecompleto}} ({{email}})</p>
+    <h4 class="subtitulo2__completar">Direccion de envio</h4>
+    <div class="container--flex">
+      <p>Calle y No.: {{callenumero}}</p>
+    <p>Colonia: {{colonia}}</p>
+    <p>Codigo postal: {{codigopostal}}</p>
+    <p>Ciudad: {{ciudad}}</p>
+    <p>Estado: {{estado}}</p>
+    </div>
+    
+    <div class="container_buttons container--flex">
+    <button class="botones" (click)="abrirCarritoModal()">Regresar al Carrito</button>
+    <button class="botones" *ngFor="let user of usuarioActual"><a class="a" [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></button>
+    <button class="botones">Continuar con el pago</button> 
+    </div>
+
+
+  </div>
+</body>
+

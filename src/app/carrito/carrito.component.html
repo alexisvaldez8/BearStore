@@ -18,12 +18,12 @@
         <td>{{car.talla}}</td>
         <td>${{car.precio}}</td>
         <td>${{car.total}}</td>
-        <td><button (click)="eliminarCarritobd(car.idcarrito)">Eliminar</button></td>
+        <td><button class="boton__eliminar_carrito" (click)="eliminarCarritobd(car.idcarrito)">Eliminar</button></td>
       </tr>
     </table>
   </div>
   <h2>Total del pedido: ${{totalFinal}}</h2>
-  <button>Completar compra</button>
+  <button class="boton__completar" [mat-dialog-close]="true"> <a class="a" [routerLink]="['/completar-compra']">Completar compra</a></button>
   </div>  
 
 </body>

@@ -8,6 +8,30 @@ body{
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
+.a{
+    display: block;
+    padding: 10px 5px;
+    color:white;
+    text-decoration: none;
+}
+.boton__completar{
+    background: #0B4479;
+    color:white;
+    border-radius: 8px;
+    height: 50px;
+    margin-top: 15px;
+}
+.boton__eliminar_carrito{
+    background: #0B4479;
+    color:white;
+    padding: 3px;
+    border-radius: 8px;
+}
+.boton__eliminar_carrito:hover{
+    cursor: pointer;
+    background: rgba(116, 114, 114, 0.2);
+    color: black;
+}
 .pedidos__titulo{
     padding: 10px;
     text-align: center;

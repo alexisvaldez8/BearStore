@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ConsultasService} from '../consultas.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+
 
 
 @Component({
@@ -9,13 +12,17 @@ import {ConsultasService} from '../consultas.service';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor(public http:ConsultasService) {
+  constructor(public dialog: MatDialog,public http:ConsultasService,private router: Router) {
     this.regresaCarrito();
    }
 
    mostrarid(id){
       console.log("este es el id: "+id);
    }
+
+   btnClick= function () {
+    this.router.navigateByUrl('/completar-compra');
+  };
 
   carrito
   jsonusuario=JSON.parse(localStorage.getItem("Sesion"));

@@ -21,6 +21,7 @@ import { DatosusuarioComponent } from './datosusuario/datosusuario.component';
 import { AltaProductosComponent } from './alta-productos/alta-productos.component';
 import { CambiarcontrasenaComponent } from './cambiarcontrasena/cambiarcontrasena.component';
 import { CompletarcompraComponent } from './completarcompra/completarcompra.component';
+import { EnvioPagoComponent } from './envio-pago/envio-pago.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -51,7 +52,8 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     DatosusuarioComponent,
     AltaProductosComponent,
     CambiarcontrasenaComponent,
-    CompletarcompraComponent
+    CompletarcompraComponent,
+    EnvioPagoComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

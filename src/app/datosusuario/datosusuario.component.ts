@@ -38,7 +38,6 @@ export class DatosusuarioComponent implements OnInit {
 
   }
 
-  
 
   traerdatos(){
     this.http.regresaDatosUsuario(this.usuarioSesion).then(
