@@ -94,6 +94,10 @@ abrirCarritoModal(){
   }
 }
 
+envioPago(){
+  this.router.navigateByUrl('/envio-pago');
+}
+
   ngOnInit() {
   }
 

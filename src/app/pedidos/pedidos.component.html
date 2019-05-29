@@ -8,12 +8,14 @@
       <tr class="active tabla__pedidos__titulo">
         <td># Pedido</td>
         <td>Fecha</td>
+        <td>Metodo Pago</td>
         <td>Total</td>
       </tr>
       <tr *ngFor="let ped of pedidos">
-        <td>{{ped.idpedido}}</td>
+        <td>{{ped.idpedido}}</td>        
         <td>{{ped.fecha}}</td>
-        <td>{{ped.total}}</td>
+        <td>{{ped.metodopago}}</td>
+        <td>${{ped.total}}</td>
       </tr>
     </table>
   </div>

@@ -24,15 +24,10 @@ export class CarritoComponent implements OnInit {
     this.router.navigateByUrl('/completar-compra');
   };
 
-  carrito
+  carrito;
   jsonusuario=JSON.parse(localStorage.getItem("Sesion"));
   idusuario=this.jsonusuario[0].id_usuario;
   
-carritop=[
-     {cantidad:'1',producto:'Spiderlogo',talla:'chica'},
-     {cantidad:'2',producto:'Iron Man Face',talla:'chica'},
-     {cantidad:'4',producto:'Capitan',talla:'mediana'}
-  ];
 nombreusuario;
 numArticulos=0;
   regresaCarrito(){

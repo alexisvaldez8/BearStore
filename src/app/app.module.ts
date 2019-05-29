@@ -33,6 +33,8 @@ const routes:Routes=[
       {path: 'alta-productos', component:AltaProductosComponent},
       {path: 'cambiar-contrasena/:idusuario', component:CambiarcontrasenaComponent},
       {path: 'completar-compra', component:CompletarcompraComponent},
+      {path: 'envio-pago', component:EnvioPagoComponent},
+
   
 ]
 RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});

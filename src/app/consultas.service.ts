@@ -106,6 +106,20 @@ altaProductos(nombreproducto:String,chica:String,mediana:String,grande:String,xl
   });
 }
 
+agregarPedido(idusuario,fecha,metodopago,subtotal,envio,total){
+  console.log("antes return");
+  var urlaltapedidos=this.url+"insertarPedido.php?idusuario="+idusuario+"&fecha="+fecha+"&metodopago="+metodopago+"&subtotal="+subtotal+"&envio="+envio+"&total="+total;
+  console.log(urlaltapedidos);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlaltapedidos).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
 modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:String,codigopostal:String,ciudad:String,estado:String){
   console.log("antes return");
   var urlmodificarDatosUsuario=this.url+"actualizarDatosUsuario.php?idusuario="+id+"&telefono="+telefono+"&callenumero="+callenumero+"&colonia="+colonia+"&codigopostal="+codigopostal+"&ciudad="+ciudad+"&estado="+estado;
