@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class EnvioPagoComponent implements OnInit {
 
   constructor(public http:ConsultasService,private router: Router) {
-    this.construirFecha();  
     this.regresaCarrito();
    }
 
@@ -30,11 +29,16 @@ export class EnvioPagoComponent implements OnInit {
   m = this.n.getMonth() + 1;
   //Día
   d = this.n.getDate();
+
+  h=this.n.getHours();
+  min=this.n.getMinutes();
+  seg=this.n.getSeconds();
+
 construirFecha(){  
 if(this.m<10){
-  this.fecha=this.y + "-0" + this.m + "-" + this.d;
+  this.fecha=this.y + "-0" + this.m + "-" + this.d+" "+this.h+":"+this.min+":"+this.seg;
 }else{
-  this.fecha=this.y + "-" + this.m + "-" + this.d;
+  this.fecha=this.y + "-" + this.m + "-" + this.d+" "+this.h+":"+this.min+":"+this.seg;
 }
 return this.fecha;
 }
@@ -61,6 +65,8 @@ return this.fecha;
           localStorage.setItem("Articulos",JSON.stringify(this.numArticulos));
           this.getTotalPedido();
           this.calcularEnvioTotalFinal();
+          //this.imprimeid();
+
           }
         },(error)=>{
           console.log("ERROR "+JSON.stringify(error));
@@ -107,15 +113,49 @@ return this.fecha;
       }
     }
 
+    traerPedidoid(){
+      this.http.traerIDpedido(this.idusuario,this.fecha).then(
+        (data)=>{
+          console.log(data);
+          this.idpedido=data;
+          this.idpedido=this.idpedido.pedido[0].idpedido;
+          console.log(this.idpedido);
+          localStorage.setItem("idpedido",JSON.stringify(this.idpedido));
+        },(error)=>{
+          console.log("ERROR "+JSON.stringify(error));
+        }
+      );
+    }
+
     registroPedidobd(){
+      this.construirFecha();  
       this.http.agregarPedido(this.idusuario,this.fecha,this.metodopago,this.subtotalFinal,this.costoenvio,this.totalpedidoenvio).then(
+        (data)=>{
+          this.traerPedidoid();
+          console.log(data);
+          var result=data["registro"];
+          console.log(result);
+          if(result=="correcto"){
+            this.pedidoProductos();
+            alert("Pedido completado con exito!");
+          }
+          this.pedidoProductos();
+          location.reload();
+        },(error)=>{
+          console.log("ERROR "+JSON.stringify(error));
+        }
+      );
+    }
+
+    talla;
+    registrarPedidoProductobd(id){
+      this.http.agregarPedidoProducto(id,this.idproducto,this.talla,this.cantidad).then(
         (data)=>{
           console.log(data);
           var result=data["registro"];
           console.log(result);
           if(result=="correcto"){
-            this.pedidoProductosbd();
-            alert("Pedido completado con exito!");
+            console.log("pedido al cien!!!")
           }
         },(error)=>{
           console.log("ERROR "+JSON.stringify(error));
@@ -123,9 +163,27 @@ return this.fecha;
       );
     }
 
-      pedidoProductosbd(){
-
+      idpedido;
+      
+      id_pedido;
+      idproducto;
+      cantidad;
+      pedidoProductos(){
+        for(let i = 0; i < this.carrito.length; i++){
+          this.id_pedido=localStorage.getItem("idpedido");
+          this.id_pedido=this.id_pedido.replace(/['"]+/g, '');
+          this.idproducto=this.carrito[i].idproducto;
+          this.talla=this.carrito[i].talla;
+          this.cantidad=this.carrito[i].cantidad;
+          this.registrarPedidoProductobd(this.id_pedido); 
+        }
       }
+      pedidoProductos2(){
+        for(let i = 0; i < this.carrito.length; i++){
+          this.registrarPedidoProductobd(this.id_pedido); 
+        }
+      }
+      
     
   ngOnInit() {
   }

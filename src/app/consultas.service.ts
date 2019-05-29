@@ -120,6 +120,33 @@ agregarPedido(idusuario,fecha,metodopago,subtotal,envio,total){
   });
 }
 
+agregarPedidoProducto(idpedido,idproducto,talla,cantidad){
+  console.log("antes return");
+  var urlaltapedidosproducto=this.url+"insertarPedidoProducto.php?idpedido="+idpedido+"&idproducto="+idproducto+"&talla="+talla+"&cantidad="+cantidad;
+  console.log(urlaltapedidosproducto);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlaltapedidosproducto).subscribe(data=>{
+      console.log("suscribe");
+        resolve(data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
+traerIDpedido(idusuario:String,fecha:String){
+  var urlidpedido=this.url+"obtenerIdPedido.php?idusuario="+idusuario+"&fecha="+fecha;
+  console.log(urlidpedido);
+  return new Promise((resolve, reject)=>{
+    this.http.get(urlidpedido).subscribe(data=>{
+        resolve(data);
+        console.log("data: "+data);
+    },(err)=>{
+      reject(err);
+    })
+  });
+}
+
 modificarDatosUsuario(id:String,telefono:String,callenumero:String,colonia:String,codigopostal:String,ciudad:String,estado:String){
   console.log("antes return");
   var urlmodificarDatosUsuario=this.url+"actualizarDatosUsuario.php?idusuario="+id+"&telefono="+telefono+"&callenumero="+callenumero+"&colonia="+colonia+"&codigopostal="+codigopostal+"&ciudad="+ciudad+"&estado="+estado;

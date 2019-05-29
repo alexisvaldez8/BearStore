@@ -22,6 +22,7 @@ import { AltaProductosComponent } from './alta-productos/alta-productos.componen
 import { CambiarcontrasenaComponent } from './cambiarcontrasena/cambiarcontrasena.component';
 import { CompletarcompraComponent } from './completarcompra/completarcompra.component';
 import { EnvioPagoComponent } from './envio-pago/envio-pago.component';
+import { FinalizarpedidoComponent } from './finalizarpedido/finalizarpedido.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -55,7 +56,8 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     AltaProductosComponent,
     CambiarcontrasenaComponent,
     CompletarcompraComponent,
-    EnvioPagoComponent
+    EnvioPagoComponent,
+    FinalizarpedidoComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [
