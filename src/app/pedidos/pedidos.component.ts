@@ -12,8 +12,9 @@ export class PedidosComponent implements OnInit {
   
   constructor(public http:ConsultasService,private rutaActiva: ActivatedRoute) {
     this.traerUsuario();
-    this.traerPedidos();
-    this.traerPedidosAdmin();
+    this.validarUsuarioAdmin();
+    //this.traerPedidos();
+    //this.traerPedidosAdmin();
   }
 
   titulo="Pedidos";
@@ -28,6 +29,14 @@ export class PedidosComponent implements OnInit {
     {idpedido:'2',fecha:'2019-05-11',total:'360.00'},
     {idpedido:'3',fecha:'2019-05-12',total:'570.00'}
   ];*/
+
+  validarUsuarioAdmin(){
+    if(this.usuarioSesion=='1'){
+      this.traerPedidosAdmin();
+    }else{
+      this.traerPedidos();
+    }
+  }
 
   
     muestrapedidos(){
@@ -69,8 +78,8 @@ export class PedidosComponent implements OnInit {
           (data)=>{
             console.log("Pedidos Admin");
             console.log(data);
-            //this.pedidos=data;
-            //this.pedidos=this.pedidos.pedidos;
+            this.pedidos=data;
+            this.pedidos=this.pedidos.pedidos;
             console.log("llenado...");
             console.log(this.pedidos);
           },(error)=>{
