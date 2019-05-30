@@ -13,6 +13,7 @@ export class PedidosComponent implements OnInit {
   constructor(public http:ConsultasService,private rutaActiva: ActivatedRoute) {
     this.traerUsuario();
     this.traerPedidos();
+    this.traerPedidosAdmin();
   }
 
   titulo="Pedidos";
@@ -62,6 +63,23 @@ export class PedidosComponent implements OnInit {
           }
         );
       }
+
+      traerPedidosAdmin(){
+        this.http.pedidosAdmin().then(
+          (data)=>{
+            console.log("Pedidos Admin");
+            console.log(data);
+            //this.pedidos=data;
+            //this.pedidos=this.pedidos.pedidos;
+            console.log("llenado...");
+            console.log(this.pedidos);
+          },(error)=>{
+            console.log("ERROR "+JSON.stringify(error));
+          }
+        );
+      }
+      
+
 
   ngOnInit() {
     
