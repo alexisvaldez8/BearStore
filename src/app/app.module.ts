@@ -35,6 +35,7 @@ const routes:Routes=[
       {path: 'cambiar-contrasena/:idusuario', component:CambiarcontrasenaComponent},
       {path: 'completar-compra', component:CompletarcompraComponent},
       {path: 'envio-pago', component:EnvioPagoComponent},
+      {path: 'fin-pedido', component:FinalizarpedidoComponent},
 
   
 ]

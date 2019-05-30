@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700|Galdeano|Montserrat:400,700|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Montserrat+Alternates|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Gentium+Basic:400,700|Permanent+Marker');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+.logos__img{
+    margin: auto;
+    max-width: 320px;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+.container__buttons{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    display: block;
+}
+.a{
+    display: block;
+    padding: 10px 10px;
+    color:white;
+    text-decoration: none;
+}
+.botones{
+    margin: auto;
+    background: #0B4479;
+    color:white;
+    font-size: 1.3em;
+    border-radius: 8px;
+    width: 150px;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo__completar{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2.0em;
+    padding: 15px;
+    text-align: center;
+}
+.subtitulo__completar{
+    font-size: 1.6em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.subtitulo2__completar{
+    font-size: 1.4em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.titulo__parrafo{
+    font-weight: bold;
+}
+.titulo__parrafo2{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.logo{
+    padding: 10px;
+    width: 245px;
+    height: 165px;
+    margin-left: 40%;
+}
+.column{
+    width: 100%;    
+}
+
+
+@media screen and (min-width:480px){
+    .logo{
+        color: white;
+        margin-left: 50%;
+    }
+    .main-header-principal{
+        text-align: right;
+    }
+    .main-header-principal-carrito{
+        background: none;
+        color: black;
+        font-size: 1.4em;
+    }
+    .logos__img{
+        max-width: 420px;
+        height: auto;
+    }
+    .main{
+        padding-bottom: 15px;
+    }
+    .column--50{
+        width: 49%;
+    }
+    .column--50-25{
+        width: 49%;
+    }
+    .column--33{
+        width: 32%;
+    }
+    
+}
+
+@media screen and (min-width:768px){
+    .logo{
+        margin-left: 70%;
+
+    }
+    .column--50-25{
+        width: 24.5%;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .container{
+        width: 1000px;
+    }
+    .logo{
+        padding: 0;
+    }
+    .logos__img{
+        width: 480px;
+    }
+}
+
+@media screen and (min-width:1600px){
+    .container{
+        width: 1400px;
+    }
+    
+
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ConsultasService} from '../consultas.service';
 import { Router } from '@angular/router';
+import { delay } from 'q';
 
 
 @Component({
@@ -13,6 +14,11 @@ export class EnvioPagoComponent implements OnInit {
   constructor(public http:ConsultasService,private router: Router) {
     this.regresaCarrito();
    }
+
+
+   async delay(ms: number) {
+    await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
 
   metodopago='Deposito Tarjeta';
   verSeleccion:String= '';
@@ -113,22 +119,11 @@ return this.fecha;
       }
     }
 
-    traerPedidoid(){
-      this.http.traerIDpedido(this.idusuario,this.fecha).then(
-        (data)=>{
-          console.log(data);
-          this.idpedido=data;
-          this.idpedido=this.idpedido.pedido[0].idpedido;
-          console.log(this.idpedido);
-          localStorage.setItem("idpedido",JSON.stringify(this.idpedido));
-        },(error)=>{
-          console.log("ERROR "+JSON.stringify(error));
-        }
-      );
-    }
+    
 
     registroPedidobd(){
-      this.construirFecha();  
+      this.construirFecha();
+      if(confirm("¿Deseas finalizar tu compra?")){
       this.http.agregarPedido(this.idusuario,this.fecha,this.metodopago,this.subtotalFinal,this.costoenvio,this.totalpedidoenvio).then(
         (data)=>{
           this.traerPedidoid();
@@ -136,21 +131,31 @@ return this.fecha;
           var result=data["registro"];
           console.log(result);
           if(result=="correcto"){
-            this.pedidoProductos();
+            //this.pedidoProductos();
             alert("Pedido completado con exito!");
+            this.delay(3000).then(any=>{
+              //your task after delay.
+              this.pedidoProductos();
+              this.finCompra();
+              });
           }
-          this.pedidoProductos();
-          location.reload();
+          //location.reload();
         },(error)=>{
           console.log("ERROR "+JSON.stringify(error));
         }
       );
+      }else{
+
+      }
+
     }
 
     talla;
-    registrarPedidoProductobd(id){
-      this.http.agregarPedidoProducto(id,this.idproducto,this.talla,this.cantidad).then(
+
+    registrarPedidoProductobd(){
+      this.http.agregarPedidoProducto(this.idpedido,this.idproducto,this.talla,this.cantidad).then(
         (data)=>{
+          
           console.log(data);
           var result=data["registro"];
           console.log(result);
@@ -161,29 +166,42 @@ return this.fecha;
           console.log("ERROR "+JSON.stringify(error));
         }
       );
+      
     }
 
       idpedido;
-      
       id_pedido;
       idproducto;
       cantidad;
+
+      traerPedidoid(){
+        this.http.traerIDpedido(this.idusuario,this.fecha).then(
+          (data)=>{
+            console.log(data);
+            this.idpedido=data;
+            this.idpedido=this.idpedido.pedido[0].idpedido;
+            console.log(this.idpedido);
+            localStorage.setItem("idpedido",JSON.stringify(this.idpedido));
+          },(error)=>{
+            console.log("ERROR "+JSON.stringify(error));
+          }
+        );
+      }
+
       pedidoProductos(){
         for(let i = 0; i < this.carrito.length; i++){
-          this.id_pedido=localStorage.getItem("idpedido");
-          this.id_pedido=this.id_pedido.replace(/['"]+/g, '');
           this.idproducto=this.carrito[i].idproducto;
           this.talla=this.carrito[i].talla;
           this.cantidad=this.carrito[i].cantidad;
-          this.registrarPedidoProductobd(this.id_pedido); 
-        }
-      }
-      pedidoProductos2(){
-        for(let i = 0; i < this.carrito.length; i++){
-          this.registrarPedidoProductobd(this.id_pedido); 
+          this.registrarPedidoProductobd(); 
         }
       }
       
+      
+
+      finCompra(){
+        this.router.navigateByUrl('/fin-pedido');
+      }
     
   ngOnInit() {
   }
