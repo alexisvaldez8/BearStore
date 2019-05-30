@@ -41,6 +41,8 @@
                             <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/pedidos',user.id_usuario]" class="a" href="">Pedidos</a></li>
                             <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/cambiar-contrasena',user.id_usuario]" class="a" href="">Cambiar Contraseña</a></li>
                             <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></li>
+                            <li *ngIf="userAct==1"><a [routerLink]="['/alta-productos']" class="a" href="">Agregar Producto</a></li>
+
                     </ul>
                 </li>
                 <li class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>

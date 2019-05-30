@@ -25,6 +25,7 @@ export class MenuComponent implements OnInit {
 totalCarrito=0;
 sesion;
 
+userAct;
 banderaSesion:boolean;
 usuarioActual=null;
 usuarioSesion;
@@ -43,6 +44,7 @@ comprobarSesion(){
 			this.banderaSesion=true;
 			this.usuarioActual=localStorage.getItem("Sesion");
 			this.usuarioSesion= JSON.parse(this.usuarioActual);
+			this.userAct=this.usuarioSesion[0].id_usuario;
 			console.log(this.usuarioSesion);
 			this.sesion="Cerrar Sesion";
 		}
