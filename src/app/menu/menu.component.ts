@@ -19,7 +19,10 @@ export class MenuComponent implements OnInit {
 	constructor(public dialog: MatDialog, public http:ConsultasService) {
 		this.comprobarSesion();
 		this.validar();
+		this.comprobarAdmin();
 	}
+
+	claseMenu: string = "ruta-menu2";
 
  articulosCarrito=0;
 totalCarrito=0;
@@ -29,6 +32,14 @@ userAct;
 banderaSesion:boolean;
 usuarioActual=null;
 usuarioSesion;
+
+comprobarAdmin(){
+	if(this.userAct!=1){
+		this.claseMenu="oculto";
+	}else{
+		//this.claseMenu="oculto"
+	}
+}
 
 conjuntoSeccion:[{ Seccion:'Playeras'}, {Seccion:'Sudaderas'}, {Seccion:'Chamarras'}
 ];
@@ -229,6 +240,7 @@ mostrarRegistro(){
 		
     $(".submenu").click(function(){
 			$(this).children("ul").slideToggle();
+			console.log("despliega");
 		})
 
     var slider = $('#slider');

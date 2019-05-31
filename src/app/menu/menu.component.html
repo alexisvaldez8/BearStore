@@ -36,17 +36,24 @@
                           <li><a [routerLink]="['/productos', 'nino', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
                     </ul>
                 </li>
-                <li class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>
+                <li  class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>
                     <ul>
-                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/pedidos',user.id_usuario]" class="a" href="">Pedidos</a></li>
-                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/cambiar-contrasena',user.id_usuario]" class="a" href="">Cambiar Contraseña</a></li>
-                            <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></li>
-                            <li *ngIf="userAct==1"><a [routerLink]="['/alta-productos']" class="a" href="">Agregar Producto</a></li>
-
+                          <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/pedidos',user.id_usuario]" class="a" href="">Pedidos</a></li>
+                          <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/cambiar-contrasena',user.id_usuario]" class="a" href="">Cambiar Contraseña</a></li>
+                          <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></li>
                     </ul>
                 </li>
-                <li class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>
+                <li *ngIf="userAct!=1" class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>
                 </li>
+                <li class="opcion-menu submenu" [class]="claseMenu"><a class="ruta-menu">Admin</a>
+                  <ul>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Agregar Producto</a></li>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Modificar Prodcuto</a></li>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Clientes</a></li>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Pedidos</a></li>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Devoluciones</a></li>
+                  </ul>
+              </li>
             </ul>
               <div class="user-icon">
                   <a class="ruta-user-icon"><span (click)="mostrarLogin()" style="width:auto;" class="icon-user"></span>{{sesion}}</a>

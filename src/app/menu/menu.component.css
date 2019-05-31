@@ -132,6 +132,11 @@ h1, h2, h3, h4, h5, h6{
     padding: 15px;
     font-size: 1.1em;
 }
+.ruta-menu2{
+    display: block;
+    color: white;
+    text-decoration: none;
+}
 .ruta-menu:hover{
     background: #0B4479 ;
     color: white;
@@ -141,7 +146,7 @@ h1, h2, h3, h4, h5, h6{
     color: white;
 }
 .mostrar{    
-    height: 480px;
+    height: 720px;
 }
 .menu ul{
     display: none;
@@ -152,6 +157,9 @@ h1, h2, h3, h4, h5, h6{
     padding: 20px 20px;
     color:white;
     text-decoration: none;
+}
+.oculto{
+    display: none;
 }
 .menu a:hover{
     background: rgba(0, 0, 0, 0.3);
