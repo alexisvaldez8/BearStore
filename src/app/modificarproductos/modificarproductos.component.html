@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+
+<body>
+
+    <main class="main">
+
+        <div class="container">
+          <h2 class="titulo__datos">Actualizar Productos</h2>
+            <form>
+                <div class="form-group">
+                  <label class="label_formulario" for="nombre-producto">Nombre</label>
+                  <select class="form-control" name="metodopago" id="pago">
+                    <option [(ngModel)]="nombreproducto" name="nombreproducto" value="nombreproducto" ngDefaultControl></option>
+                  </select>
+                  <label class="label_formulario" for="chica">Stock Chica</label>
+                  <input type="text" class="form-control" name="chica" placeholder="10" [(ngModel)]="tallachica">
+                  <label class="label_formulario" for="mediana">Stock Mediana</label>
+                  <input type="text" class="form-control" name="mediana" placeholder="10" [(ngModel)]="tallamediana">
+                  <label class="label_formulario" for="grande">Stock Grande</label>
+                  <input type="text" class="form-control" name="grande" placeholder="10" [(ngModel)]="tallagrande">
+                  <label class="label_formulario" for="xl">Stock XL</label>
+                  <input type="text" class="form-control" name="xl" placeholder="10" [(ngModel)]="tallaxl">
+                  <label class="label_formulario" for="precio">Precio</label>
+                  <input type="text" class="form-control" name="precio" placeholder="$269.00" [(ngModel)]="precio">
+                  <label class="label_formulario" for="genero">Genero</label>
+                  <input type="text" class="form-control" name="genero" placeholder="Hombre" [(ngModel)]="genero">
+                  <label class="label_formulario" for="color">Color</label>
+                  <input type="text" class="form-control" name="color" placeholder="Azul" [(ngModel)]="color">
+                  <label class="label_formulario" for="fecha">Fecha de Publicacion</label>
+                  <input type="text" class="form-control" name="fecha" readonly="readonly" placeholder="{{fecha}}" [(ngModel)]="fecha">
+
+                  </div>
+
+                <button type="button" class="boton__datos" (click)=registroProductos() >Guardar</button>
+      
+      
+              </form>
+        </div>
+          
+      </main>
+
+</body>
+
+
+
+<app-footer></app-footer>
