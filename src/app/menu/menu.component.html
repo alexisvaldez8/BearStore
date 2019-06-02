@@ -19,21 +19,21 @@
                 <li class="opcion-menu"><a href="" class="ruta-menu ruta-menu-select">Inicio</a></li>
                 <li class="opcion-menu submenu"><a class="ruta-menu">Hombre</a>
                   <ul>
-                          <li><a [routerLink]="['/productos', 'hombre', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
-                          <li><a [routerLink]="['/productos', 'hombre', 'sudaderas']" class="a" (click)="recuperarSeccion()">Sudaderas</a></li>
-                          <li><a [routerLink]="['/productos', 'hombre', 'chamarras']" class="a" (click)="recuperarSeccion()">Chamarras</a></li>
+                          <li><a class="a" (click)="playerasHombre()">Playeras</a></li>
+                          <li><a class="a" (click)="sudaderasHombre()">Sudaderas</a></li>
+                          <li><a class="a" (click)="chamarrasHombre()">Chamarras</a></li>
                   </ul>
               </li>
                 <li class="opcion-menu submenu"><a  class="ruta-menu">Mujer</a>
                     <ul>
-                          <li><a [routerLink]="['/productos', 'mujer', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
-                          <li><a [routerLink]="['/productos', 'mujer', 'sudaderas']" class="a" (click)="recuperarSeccion()">Sudaderas</a></li>
-                          <li><a [routerLink]="['/productos', 'mujer', 'chamarras']" class="a" (click)="recuperarSeccion()">Chamarras</a></li>
+                          <li><a class="a" (click)="playerasMujer()">Playeras</a></li>
+                          <li><a class="a" (click)="sudaderasMujer()">Sudaderas</a></li>
+                          <li><a class="a" (click)="chamarrasMujer()">Chamarras</a></li>
                     </ul>
                 </li>
                 <li class="opcion-menu submenu"><a  class="ruta-menu">Niño</a>
                     <ul>
-                          <li><a [routerLink]="['/productos', 'nino', 'playeras' ]" class="a" (click)="recuperarSeccion()">Playeras</a></li>
+                          <li><a class="a" (click)="playerasNino()">Playeras</a></li>
                     </ul>
                 </li>
                 <li  class="opcion-menu submenu"><a class="ruta-menu">Mi Cuenta</a>
@@ -49,7 +49,7 @@
                   <ul>
                     <li><a [routerLink]="['/alta-productos']" class="a" href="">Agregar Producto</a></li>
                     <li><a [routerLink]="['/alta-productos']" class="a" href="">Modificar Prodcuto</a></li>
-                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Clientes</a></li>
+                    <li><a [routerLink]="['/clientes']" class="a" href="">Clientes</a></li>
                     <li><a [routerLink]="['/alta-productos']" class="a" href="">Pedidos</a></li>
                     <li><a [routerLink]="['/alta-productos']" class="a" href="">Devoluciones</a></li>
                   </ul>

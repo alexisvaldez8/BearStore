@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<body>
+  <h2 class="pedidos__titulo">{{titulo}}</h2>
+  <h2 class="pedidos__titulo">Clientes</h2>
+    
+<div class="container table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Contacto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientesCompleto">
+        <th scope="row">{{cliente.nomCompleto}}</th>
+        <td>{{cliente.direccion}}</td>
+        <td>{{cliente.contacto}}</td>
+      </tr>
+   
+    </tbody>
+  </table>
+</div>
+  
+</body>
+
+<app-footer></app-footer>

@@ -23,6 +23,7 @@ import { CambiarcontrasenaComponent } from './cambiarcontrasena/cambiarcontrasen
 import { CompletarcompraComponent } from './completarcompra/completarcompra.component';
 import { EnvioPagoComponent } from './envio-pago/envio-pago.component';
 import { FinalizarpedidoComponent } from './finalizarpedido/finalizarpedido.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -36,6 +37,7 @@ const routes:Routes=[
       {path: 'completar-compra', component:CompletarcompraComponent},
       {path: 'envio-pago', component:EnvioPagoComponent},
       {path: 'fin-pedido', component:FinalizarpedidoComponent},
+      {path: 'clientes', component:ClientesComponent},
 
   
 ]
@@ -58,7 +60,8 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     CambiarcontrasenaComponent,
     CompletarcompraComponent,
     EnvioPagoComponent,
-    FinalizarpedidoComponent
+    FinalizarpedidoComponent,
+    ClientesComponent
   ],
   entryComponents: [CarritoComponent],
   imports: [

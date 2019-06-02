@@ -6,6 +6,8 @@ import { ReplaceSource } from 'webpack-sources';
 import {ConsultasService} from '../consultas.service';
 import { PatternValidator } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 
 
@@ -16,7 +18,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-	constructor(public dialog: MatDialog, public http:ConsultasService) {
+	constructor(public dialog: MatDialog, public http:ConsultasService,private router: Router) {
 		this.comprobarSesion();
 		this.validar();
 		this.comprobarAdmin();
@@ -235,6 +237,61 @@ mostrarRegistro(){
 		}
 	}
 	
+	async delay(ms: number) {
+    await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
+	playerasHombre(){
+		this.router.navigateByUrl('/productos/hombre/playeras');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+	sudaderasHombre(){
+		this.router.navigateByUrl('/productos/hombre/sudaderas');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+	chamarrasHombre(){
+		this.router.navigateByUrl('/productos/hombre/chamarras');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+
+	playerasMujer(){
+		this.router.navigateByUrl('/productos/mujer/playeras');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+	sudaderasMujer(){
+		this.router.navigateByUrl('/productos/mujer/sudaderas');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+	chamarrasMujer(){
+		this.router.navigateByUrl('/productos/mujer/chamarras');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+	playerasNino(){
+		this.router.navigateByUrl('/productos/nino/playeras');
+		this.delay(500).then(any=>{
+			//your task after delay.
+			location.reload();
+			});
+	}
+		
 
   	ngOnInit() {
 		
