@@ -137,6 +137,11 @@ h1, h2, h3, h4, h5, h6{
     color: white;
     text-decoration: none;
 }
+.nosotros{
+    display: block;
+    color: white;
+    text-decoration: none;
+}
 .ruta-menu:hover{
     background: #0B4479 ;
     color: white;

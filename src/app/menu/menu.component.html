@@ -43,15 +43,18 @@
                           <li *ngFor="let user of usuarioSesion"><a [routerLink]="['/datos-usuario',user.id_usuario]" class="a" href="">Modificar Datos</a></li>
                     </ul>
                 </li>
-                <li *ngIf="userAct!=1" class="opcion-menu"><a routerLink="/contacto" routerLinkActive="active" class="ruta-menu">Nosotros</a>
+                <li class="opcion-menu submenu" [class]="nosotros"><a class="ruta-menu">Nosotros</a>
+                      <ul>
+                        <li><a [routerLink]="['/contacto']" class="a" href="">Contacto</a></li>
+                        <li><a href="http://localhost:8080/vincula/comentarios.jsp" class="a">Comparte tu opinion</a></li>
+                      </ul>
                 </li>
                 <li class="opcion-menu submenu" [class]="claseMenu"><a class="ruta-menu">Admin</a>
                   <ul>
                     <li><a [routerLink]="['/alta-productos']" class="a" href="">Agregar Producto</a></li>
-                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Modificar Prodcuto</a></li>
+                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Modificar Producto</a></li>
                     <li><a [routerLink]="['/clientes']" class="a" href="">Clientes</a></li>
-                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Pedidos</a></li>
-                    <li><a [routerLink]="['/alta-productos']" class="a" href="">Devoluciones</a></li>
+                    <li><a [routerLink]="['/pedidos',1]" class="a" href="">Pedidos</a></li>
                   </ul>
               </li>
             </ul>

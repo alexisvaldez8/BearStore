@@ -22,9 +22,11 @@ export class MenuComponent implements OnInit {
 		this.comprobarSesion();
 		this.validar();
 		this.comprobarAdmin();
+		this.comprobarNosotros();
 	}
 
 	claseMenu: string = "ruta-menu2";
+	nosotros: string="ruta-menu2"
 
  articulosCarrito=0;
 totalCarrito=0;
@@ -36,12 +38,23 @@ usuarioActual=null;
 usuarioSesion;
 
 comprobarAdmin(){
-	if(this.userAct!=1){
-		this.claseMenu="oculto";
+	console.log(this.userAct);
+	if(this.userAct==1){
+		//this.claseMenu="oculto";
+	}else{
+		this.claseMenu="oculto"
+	}
+}
+comprobarNosotros(){
+	console.log(this.userAct);
+	if(this.userAct==1||this.userAct==undefined){
+		this.nosotros="oculto";
 	}else{
 		//this.claseMenu="oculto"
 	}
 }
+
+
 
 conjuntoSeccion:[{ Seccion:'Playeras'}, {Seccion:'Sudaderas'}, {Seccion:'Chamarras'}
 ];
