@@ -25,6 +25,7 @@ import { EnvioPagoComponent } from './envio-pago/envio-pago.component';
 import { FinalizarpedidoComponent } from './finalizarpedido/finalizarpedido.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ModificarproductosComponent } from './modificarproductos/modificarproductos.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -40,8 +41,6 @@ const routes:Routes=[
       {path: 'fin-pedido', component:FinalizarpedidoComponent},
       {path: 'clientes', component:ClientesComponent},
       {path: 'modificar-producto', component:ModificarproductosComponent},
-
-
   
 ]
 RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
@@ -65,6 +64,7 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     EnvioPagoComponent,
     FinalizarpedidoComponent,
     ClientesComponent,
+    RecaptchaModule.forRoot(),
     ModificarproductosComponent
   ],
   entryComponents: [CarritoComponent],

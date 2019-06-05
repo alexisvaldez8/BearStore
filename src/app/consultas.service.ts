@@ -8,7 +8,7 @@ import { promise } from 'protractor';
 })
 export class ConsultasService {
 
-  url:String="http://localhost:8081/BackendBearstore/";
+  url:String="http://192.168.0.6:8081/BackendBearstore/";
 
   constructor(public http:HttpClient) {}
    

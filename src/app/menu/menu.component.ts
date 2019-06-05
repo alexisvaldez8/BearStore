@@ -9,14 +9,16 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Router } from '@angular/router';
 
 
-
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+	resolved(captchaResponse: string) {
+		console.log(`Resolved captcha with response: ${captchaResponse}`);
+	}
 
 	constructor(public dialog: MatDialog, public http:ConsultasService,private router: Router) {
 		this.comprobarSesion();
