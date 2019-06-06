@@ -17,9 +17,17 @@ img{
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
-.oculto{
-    
+#rc-imageselect {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
 }
+
+#gwd-reCAPTCHA_2{
+    width:80px;
+	height:50px;
+   }
 .container{
     width: 100%;
     margin: auto;
@@ -283,7 +291,7 @@ input[type=text], input[type=password] {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 70%; /* Could be more or less, depending on screen size */
+    width: 86%; /* Could be more or less, depending on screen size */
     z-index: 2500;  
 }
 

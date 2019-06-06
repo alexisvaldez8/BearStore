@@ -123,7 +123,7 @@
             
                   <label for="confpsw"><b>Confirmar Contraseña</b></label>
                   <input type="password" placeholder="Confirma tu contraseña" [(ngModel)]="repcontrasenia" name="confpsw" required>
-                  <re-captcha (resolved)="resolved($event)" siteKey="6LeHaKcUAAAAADvd-keTeBSSvAjgRYbopvUavcFV"></re-captcha>
+                  <re-captcha (resolved)="resolved($event)" siteKey="6LeHaKcUAAAAADvd-keTeBSSvAjgRYbopvUavcFV" style="width: 80%;"></re-captcha>
                   <button type="submit" (click)="registro()">Registrarse</button>
                 </div>
             
