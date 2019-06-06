@@ -123,9 +123,8 @@
             
                   <label for="confpsw"><b>Confirmar Contraseña</b></label>
                   <input type="password" placeholder="Confirma tu contraseña" [(ngModel)]="repcontrasenia" name="confpsw" required>
-                    
-                  <button (click)="registro()">Registrarse</button>
-                  
+                  <re-captcha (resolved)="resolved($event)" siteKey="6LeHaKcUAAAAADvd-keTeBSSvAjgRYbopvUavcFV"></re-captcha>
+                  <button type="submit" (click)="registro()">Registrarse</button>
                 </div>
             
                 <div class="container-modal" style="background-color:#f1f1f1">

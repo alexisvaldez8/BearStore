@@ -4,7 +4,7 @@ import { RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
-
+import { RecaptchaModule } from 'ng-recaptcha';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -25,7 +25,6 @@ import { EnvioPagoComponent } from './envio-pago/envio-pago.component';
 import { FinalizarpedidoComponent } from './finalizarpedido/finalizarpedido.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ModificarproductosComponent } from './modificarproductos/modificarproductos.component';
-import { RecaptchaModule } from 'ng-recaptcha';
 
 const routes:Routes=[
       {path: '', component:InicioComponent, pathMatch:"full"},
@@ -64,7 +63,6 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     EnvioPagoComponent,
     FinalizarpedidoComponent,
     ClientesComponent,
-    RecaptchaModule.forRoot(),
     ModificarproductosComponent
   ],
   entryComponents: [CarritoComponent],
@@ -75,6 +73,7 @@ RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'});
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    RecaptchaModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   providers: [],
